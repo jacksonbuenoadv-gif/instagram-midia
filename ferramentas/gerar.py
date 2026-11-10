@@ -4,7 +4,7 @@ Requisitos: npm i @fontsource/playfair-display @fontsource/montserrat (na mesma 
 pip install playwright pillow; Chrome em /usr/bin/google-chrome (ou ajuste CHROME).
 Marcacao nos textos: *texto* = destaque dourado em italico (titulos); **texto** = negrito.
 Tipos de slide (campo "type"):
- cover    {kicker, title, sub}
+ cover    {kicker, title, sub, photo?}   photo = caminho de uma foto real (ex.: "fotos/obra-andaime.jpg", relativo à raiz do repositório)
  big      {kicker, big, big_label, paragraphs[], src}
  cards    {title, cards:[{code, tag, ok:bool, items:[{y:bool, text}]}], tip}   (2 cartoes; ok=true destaca em dourado)
  list     {kicker?, title, intro?, items:[{b, span}], src?}                     (2 a 4 itens numerados)
@@ -12,7 +12,8 @@ Tipos de slide (campo "type"):
  checklist{kicker, title, items:[{t, small}]}                                    (fundo claro; ate 4 itens)
  text     {kicker?, title, paragraphs[], src?}
  cta      {title, text, button}                                                  (sempre o ultimo; rodape com OAB)
-Spec: {"oab": "OAB/MG 211.217", "slides": [...]}
+Spec: {"oab": "OAB/MG 211.217", "story": true, "slides": [...]}
+Com "story": true, gera também story.jpg (1080x1920) a partir da capa, para publicar nos Stories.
 """
 import sys, json, re, pathlib, os
 from playwright.sync_api import sync_playwright
@@ -38,7 +39,7 @@ CSS = f"""
 @font-face{{font-family:MS;src:url({F}/montserrat/files/montserrat-latin-800-normal.woff2);font-weight:800}}
 :root{{--toga:#0f1624;--gold:#daa843;--perg:#fbf8f2;--muted:#b9bdc7;--green:#1f9d63;--red:#e0605a}}
 *{{box-sizing:border-box;margin:0;padding:0}}
-html,body{{width:1080px;height:1350px}}
+html,body{{width:1080px;height:1350px}} html:has(body.story){{height:1920px}}
 body{{font-family:MS;color:var(--perg);background:linear-gradient(135deg,#080d19 0%,#141a29 55%,#242d42 100%);
  position:relative;overflow:hidden;padding:72px 84px}}
 body.light{{background:linear-gradient(180deg,#fbf8f2 0%,#f4f0e7 100%);color:#0f1624}}
@@ -95,6 +96,11 @@ body:not(.light) .row span{{color:#c9ccd3}}
 .check small{{display:block;font-size:25px;font-weight:500;color:#5b6070;margin-top:4px}}
 .cta{{margin-top:50px;display:inline-flex;align-self:flex-start;gap:16px;align-items:center;background:#006336;color:#fff;border-radius:999px;padding:26px 44px;font-size:32px;font-weight:700}}
 .sign{{margin-top:56px;font-size:24px;color:var(--muted);line-height:1.5}}
+.ph{{position:absolute;inset:0;background-size:cover;background-position:center;filter:saturate(.85)}}
+.ph:after{{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,13,25,.55) 0%,rgba(8,13,25,.35) 30%,rgba(8,13,25,.88) 62%,#080d19 100%)}}
+body.photo .main{{justify-content:flex-end}}
+body.story{{height:1920px}} body.story .main{{top:300px;bottom:330px}}
+.storytag{{position:absolute;left:84px;right:84px;bottom:150px;text-align:center;font-size:34px;font-weight:700;color:#0f1624;background:linear-gradient(135deg,#f1ba4b,#ba882e);border-radius:999px;padding:30px}}
 """
 
 def md(s, em_style=""):
@@ -102,12 +108,23 @@ def md(s, em_style=""):
     s = re.sub(r"\*(.+?)\*", rf"<em{em_style}>\1</em>", s)
     return s
 
-def page(n, body, light=False, last=False):
-    swipe = "" if last else '<div class="swipe">Arraste →</div>'
+REPO = BASE.parent  # raiz do repositório (fotos/ fica aqui)
+
+def page(n, body, light=False, last=False, photo=None, story=False):
+    swipe = "" if (last or story) else '<div class="swipe">Arraste →</div>'
+    cls = " ".join(c for c in ["light" if light else "", "photo" if photo else "", "story" if story else ""] if c)
+    bg = ""
+    if photo:
+        ph = (REPO / photo).resolve()
+        if not ph.exists(): raise FileNotFoundError(f"foto não encontrada: {ph}")
+        bg = f'<div class="ph" style="background-image:url({ph.as_uri()})"></div>'
+    elif not light:
+        bg = '<div class="glow"></div>'
+    tag = '<div class="storytag">Novo post no perfil · @jacksonbueno.adv</div>' if story else ""
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head>
-<body class="{'light' if light else ''}">{'' if light else '<div class="glow"></div>'}
+<body class="{cls}">{bg}{tag}
 <div class="top"><div class="brand"><div class="mono">JB</div><div><b>Jackson Bueno Advogados</b><small>DIREITO DO ACIDENTADO</small></div></div>
-<div class="count">{n:02d}/{TOTAL:02d}</div></div>
+<div class="count">{"" if story else f"{n:02d}/{TOTAL:02d}"}</div></div>
 <div class="main">{body}</div>
 <div class="bottom"><div class="handle">@jacksonbueno.adv</div>{swipe}</div></body></html>"""
 
@@ -118,10 +135,10 @@ def kick(s, light=False):
 
 def src(s): return f'<div class="src">{s["src"]}</div>' if s.get("src") else ""
 
-def render(s, n):
+def render(s, n, story=False):
     t = s["type"]
     if t == "cover":
-        return page(n, f'{kick(s)}<h1>{md(s["title"])}</h1><div class="bar"></div><p class="p">{md(s.get("sub",""))}</p>')
+        return page(n, f'{kick(s)}<h1>{md(s["title"])}</h1><div class="bar"></div><p class="p">{md(s.get("sub",""))}</p>', photo=s.get("photo"), story=story)
     if t == "big":
         ps = "".join(f'<p class="p"{" style=\"margin-top:24px\"" if i else ""}>{md(p)}</p>' for i,p in enumerate(s.get("paragraphs",[])))
         return page(n, f'{kick(s)}<div class="big">{s["big"]}<span>{s["big_label"]}</span></div><div class="bar"></div>{ps}{src(s)}')
@@ -162,6 +179,13 @@ with sync_playwright() as p:
         if ov > 2: print(f"AVISO: slide {i} transborda {ov}px — encurte o texto"); 
         png = OUT / f"slide{i}.png"; pg.screenshot(path=str(png))
         Image.open(png).convert("RGB").save(OUT / f"slide{i}.jpg", "JPEG", quality=90)
+        png.unlink(); f.unlink()
+    if spec.get("story"):
+        pg.set_viewport_size({"width": 1080, "height": 1920})
+        f = OUT / "story.html"; f.write_text(render(spec["slides"][0], 1, story=True), encoding="utf-8")
+        pg.goto(f.as_uri()); pg.wait_for_timeout(400); pg.evaluate("document.fonts.ready")
+        png = OUT / "story.png"; pg.screenshot(path=str(png))
+        Image.open(png).convert("RGB").save(OUT / "story.jpg", "JPEG", quality=90)
         png.unlink(); f.unlink()
     b.close()
 print("ok", TOTAL, OUT)
