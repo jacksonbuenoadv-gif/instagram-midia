@@ -1,0 +1,126 @@
+{
+ "oab": "OAB/MG 211.217",
+ "story": true,
+ "slides": [
+  {
+   "type": "cover",
+   "kicker": "ACIDENTE DE TRABALHO",
+   "title": "O que é a CAT<br>*e quem pode emitir?*",
+   "sub": "O documento que pode fazer toda a diferença nos seus direitos depois de um acidente ou doença do trabalho."
+  },
+  {
+   "type": "text",
+   "kicker": "O QUE É",
+   "title": "CAT: *Comunicação de Acidente de Trabalho*",
+   "paragraphs": [
+    "É o registro oficial, no INSS, de um **acidente de trabalho** ou de uma **doença ocupacional**, inclusive acidente de trajeto.",
+    "Deve ser emitida **mesmo quando não há afastamento** do trabalho."
+   ],
+   "src": "Art. 22 da Lei 8.213/91"
+  },
+  {
+   "type": "big",
+   "kicker": "PRAZO DA EMPRESA",
+   "big": "1",
+   "big_label": "dia útil",
+   "paragraphs": [
+    "A empresa deve emitir a CAT até o **primeiro dia útil seguinte** ao acidente. Em caso de morte, **imediatamente**.",
+    "Se não cumprir o prazo, fica sujeita a **multa**."
+   ],
+   "src": "Art. 22 da Lei 8.213/91"
+  },
+  {
+   "type": "list",
+   "kicker": "A EMPRESA NÃO EMITIU?",
+   "title": "A CAT *pode ser feita por:*",
+   "items": [
+    {
+     "b": "Você mesmo",
+     "span": "pelo Meu INSS ou CAT Web, com a conta gov.br."
+    },
+    {
+     "b": "Dependentes ou sindicato",
+     "span": "a entidade sindical da categoria também pode registrar."
+    },
+    {
+     "b": "O médico que te atendeu",
+     "span": "ou qualquer autoridade pública. Nesses casos, **não vale o prazo de 1 dia útil**."
+    }
+   ],
+   "src": "Art. 22, § 2º, da Lei 8.213/91"
+  },
+  {
+   "type": "cards",
+   "title": "Por que a CAT *é tão importante?*",
+   "cards": [
+    {
+     "code": "CAT",
+     "tag": "COM REGISTRO",
+     "ok": true,
+     "items": [
+      {
+       "y": true,
+       "text": "Registra a ligação com o trabalho"
+      },
+      {
+       "y": true,
+       "text": "Ajuda a receber o B91 (acidentário)"
+      },
+      {
+       "y": true,
+       "text": "Base para estabilidade e FGTS"
+      }
+     ]
+    },
+    {
+     "code": "SEM",
+     "tag": "SEM REGISTRO",
+     "items": [
+      {
+       "y": false,
+       "text": "Mais difícil provar o acidente"
+      },
+      {
+       "y": false,
+       "text": "Risco de receber o B31 (comum)"
+      },
+      {
+       "y": false,
+       "text": "A empresa pode negar o ocorrido"
+      }
+     ]
+    }
+   ],
+   "tip": "Sem CAT você **não perde** o direito: o INSS e a Justiça ainda podem reconhecer o nexo."
+  },
+  {
+   "type": "checklist",
+   "kicker": "DEPOIS DO ACIDENTE",
+   "title": "O que *guardar*",
+   "items": [
+    {
+     "t": "Atendimento médico",
+     "small": "atestado, laudos e exames com datas"
+    },
+    {
+     "t": "Testemunhas",
+     "small": "nome e contato de quem viu o acidente"
+    },
+    {
+     "t": "Fotos e mensagens",
+     "small": "do local, do equipamento e das conversas com a chefia"
+    },
+    {
+     "t": "Comprovante da CAT",
+     "small": "número do protocolo ou recibo"
+    }
+   ]
+  },
+  {
+   "type": "cta",
+   "title": "Cada caso tem *seus detalhes.*",
+   "text": "Ficou com dúvida sobre a sua situação? Envie sua pergunta pelo **link na bio** e receba uma orientação.",
+   "button": "Salve e compartilhe com quem precisa"
+  }
+ ]
+}
