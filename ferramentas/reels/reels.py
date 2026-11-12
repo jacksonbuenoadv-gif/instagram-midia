@@ -77,7 +77,7 @@ W, H, FPS = 1080, 1920, 30
 NAVY = (10, 20, 36); NAVY2 = (22, 42, 70); AMBER = (255, 186, 48); WHITE = (250, 250, 246)
 SOFT = (190, 200, 214); RED = (232, 72, 60); DIM = (120, 134, 154)
 HANDLE = "@jacksonbueno.adv"; SITE = "jacksonbueno.adv.br"
-MX = 120          # margem lateral de respiro (px) para todos os elementos inseridos
+MX = 150          # margem lateral de respiro (px) para todos os elementos inseridos
 CW = W - 2 * MX   # largura útil
 
 MS = os.path.join(ROOT, "ferramentas", "node_modules", "@fontsource", "montserrat", "files", "montserrat-latin-%d-normal.woff")
@@ -256,7 +256,7 @@ def captions(img, t, b):
         if c[0][1] <= t: cur = c
     if cur is None or t > cur[-1][2] + 0.6: return
     d = ImageDraw.Draw(img); words = [w for w, s, e in cur]
-    f = fit(" ".join(words), 800, CW, 52)
+    f = fit(" ".join(words), 800, W - 120, 54)   # legendas: tamanho aprovado pelo titular
     sp = d.textlength(" ", font=f); widths = [d.textlength(w, font=f) for w in words]
     tw = sum(widths) + sp * (len(words) - 1)
     pop = eb((t - cur[0][1]) / 0.18); y = 1440 + (1 - pop) * 14; x = W / 2 - tw / 2
@@ -269,13 +269,13 @@ def s_hook(t, dur, b, gt):
     img = sframe(b["clip"], t * 0.85, b.get("clip_start", 0))
     img = grad_top(img, 520, 200); img = grad_bottom(img, 900, 1500, 235)
     p = eb(t / 0.3); lay = layer(); dl = ImageDraw.Draw(lay)
-    pill(lay, dl, b.get("pill", "CAMINHONEIRO"), b.get("pill_emoji", "🚛"), cx=W / 2, y=330, h=84, size=44)
-    paste(img, lay, cl(p * 1.5), scale=0.6 + 0.4 * p, cx=W // 2, cy=372)
+    pill(lay, dl, b.get("pill", "CAMINHONEIRO"), b.get("pill_emoji", "🚛"), cx=W / 2, y=330, h=70, size=36)
+    paste(img, lay, cl(p * 1.5), scale=0.6 + 0.4 * p, cx=W // 2, cy=365)
     td = t_of(b, b.get("key"), 0.4) - 0.1
     if t > td:
         q = eb((t - td) / 0.3); shk = math.sin((t - td) * 70) * 10 * max(0, 1 - (t - td) / 0.4)
         lay = layer(); dl = ImageDraw.Draw(lay)
-        f = M(900, min(fit(b["line1"], 900, CW, 132).size, fit(b["line2"], 900, CW, 132).size))
+        f = M(900, min(fit(b["line1"], 900, CW, 104).size, fit(b["line2"], 900, CW, 104).size))
         dl.text((W // 2, 1050), b["line1"], font=f, fill=WHITE, anchor="mt", stroke_width=4, stroke_fill=NAVY)
         dl.text((W // 2, 1060 + f.size), b["line2"], font=f, fill=AMBER, anchor="mt", stroke_width=4, stroke_fill=NAVY)
         paste(img, lay, cl(q * 1.5), dx=shk, scale=1.4 - 0.4 * q, cx=W // 2, cy=1200)
@@ -290,17 +290,17 @@ def s_cover(t, dur, b, gt):
     if bd:
         p = 1 if b.get("_still") else eb((t - 0.25) / 0.45)
         if p > 0.02:
-            D = 290; cx, cy = W - MX - 150, 975; r = int((D / 2 + 9) * p)
+            D = 250; cx, cy = W - MX - 130, 1000; r = int((D / 2 + 9) * p)
             d.ellipse((cx - r, cy - r, cx + r, cy + r), fill=AMBER)
             fc = face_circle(bd["photo"], bd["box"], max(10, int(D * p)))
             img.paste(fc, (int(cx - fc.width / 2), int(cy - fc.height / 2)), fc)
-    pill(img, d, b.get("pill", "CAMINHONEIRO"), b.get("pill_emoji", "🚛"), x=MX, y=1010, h=74, size=36)
-    d.text((W // 2, 1190), b["pre"], font=P("Bold", 54) if d.textlength(b["pre"], font=P("Bold", 54)) <= CW else fit(b["pre"], 700, CW, 54), fill=WHITE, anchor="mt")
+    pill(img, d, b.get("pill", "CAMINHONEIRO"), b.get("pill_emoji", "🚛"), x=MX, y=1010, h=66, size=32)
+    d.text((W // 2, 1190), b["pre"], font=P("Bold", 46) if d.textlength(b["pre"], font=P("Bold", 46)) <= CW else fit(b["pre"], 700, CW, 46), fill=WHITE, anchor="mt")
     tp = t_of(b, b.get("key"), 0.3); k = 1 + 0.07 * math.sin(math.pi * cl((t - tp) / 0.35))
     lay = layer(); dl = ImageDraw.Draw(lay)
-    f = M(900, min(fit(b["big1"], 900, CW, 140).size, fit(b["big2"], 900, CW, 140).size))
+    f = M(900, min(fit(b["big1"], 900, CW, 104).size, fit(b["big2"], 900, CW, 104).size))
     dl.text((W // 2, 1275), b["big1"], font=f, fill=AMBER, anchor="mt")
-    dl.text((W // 2, 1275 + f.size - 15), b["big2"], font=f, fill=AMBER, anchor="mt")
+    dl.text((W // 2, 1275 + f.size - 8), b["big2"], font=f, fill=AMBER, anchor="mt")
     paste(img, lay, 1, scale=k, cx=W // 2, cy=1400)
     return img
 
@@ -315,7 +315,7 @@ def s_montage(t, dur, b, gt):
     img = shade(img, 0.28); img = grad_bottom(img, 1100, 1550, 200); img = grad_top(img)
     d = ImageDraw.Draw(img); brand(d)
     p = eb(tl / 0.28); lay = layer(); dl = ImageDraw.Draw(lay)
-    txt = sg["text"]; f = fit(txt, 900, CW - 60, 100); tw = dl.textlength(txt, font=f); y = 820
+    txt = sg["text"]; f = fit(txt, 900, CW - 60, 76); tw = dl.textlength(txt, font=f); y = 820
     hi = (i % 2 == 1)
     dl.rectangle((W / 2 - tw / 2 - 30, y - 18, W / 2 + tw / 2 + 30, y + f.size + 26), fill=AMBER if hi else NAVY)
     dl.text((W // 2, y), txt, font=f, fill=NAVY if hi else WHITE, anchor="mt")
@@ -326,28 +326,28 @@ def s_montage(t, dur, b, gt):
 def s_card(t, dur, b, gt):
     img = shade(sframe(b.get("bg_clip", "estrada_pb_caminhoes"), gt - b["_card0"], 0, blur=True), 0.35)
     d = ImageDraw.Draw(img); brand(d)
-    d.text((W // 2, 300), b.get("header", ""), font=M(800, 40), fill=WHITE, anchor="mt")
+    d.text((W // 2, 300), b.get("header", ""), font=fit(b.get("header", "") or " ", 800, CW, 36), fill=WHITE, anchor="mt")
     tot = b.get("total", 4)
     for i in range(tot):
         cx = W // 2 - (tot - 1) * 35 + i * 70
         d.rounded_rectangle((cx - 24, 370, cx + 24, 380), 5, fill=AMBER if i < b["n"] else (70, 84, 104))
     p = eb(t / 0.38); lay = layer(); dl = ImageDraw.Draw(lay)
-    dl.rounded_rectangle((MX, 440, W - MX, 1330), 44, fill=(16, 32, 58, 235), outline=AMBER, width=5)
-    dl.text((MX + 50, 490), f"{b['n']:02d}", font=M(900, 72), fill=AMBER, anchor="lt")
-    dl.text((W - MX - 50, 516), f"/ {tot:02d}", font=M(800, 36), fill=DIM, anchor="rt")
-    title = b["title"]; f = fit(title, 900, CW - 110, 96); words = title.split(); lines = [title]
-    if f.size < 76 and len(words) > 1:
+    dl.rounded_rectangle((MX, 460, W - MX, 1260), 40, fill=(16, 32, 58, 235), outline=AMBER, width=5)
+    dl.text((MX + 44, 500), f"{b['n']:02d}", font=M(900, 58), fill=AMBER, anchor="lt")
+    dl.text((W - MX - 44, 512), f"/ {tot:02d}", font=M(800, 32), fill=DIM, anchor="rt")
+    title = b["title"]; f = fit(title, 900, CW - 110, 76); words = title.split(); lines = [title]
+    if f.size < 62 and len(words) > 1:
         hh = math.ceil(len(words) / 2) if len(words) > 2 else 1
         lines = [" ".join(words[:hh]), " ".join(words[hh:])]
-        f = M(900, min(96, min(fit(l, 900, CW - 110, 96).size for l in lines)))
-    y0 = 990 if len(lines) == 1 else 940
+        f = M(900, min(76, min(fit(l, 900, CW - 110, 76).size for l in lines)))
+    y0 = 950 if len(lines) == 1 else 915
     for k, ln in enumerate(lines): dl.text((W // 2, y0 + k * (f.size + 6)), ln, font=f, fill=WHITE, anchor="mt")
     sub = b.get("sub", "")
-    if sub: dl.text((W // 2, y0 + len(lines) * (f.size + 6) + 30), sub, font=P("Medium", 42) if _d0.textlength(sub, font=P("Medium", 42)) <= CW - 110 else fit(sub, 500, CW - 110, 42), fill=AMBER, anchor="mt")
+    if sub: dl.text((W // 2, y0 + len(lines) * (f.size + 6) + 30), sub, font=P("Medium", 38) if _d0.textlength(sub, font=P("Medium", 38)) <= CW - 110 else fit(sub, 500, CW - 110, 38), fill=AMBER, anchor="mt")
     pe = eel((t - 0.2) / 0.7)
     if pe > 0.02:
-        cy = 730; dl.ellipse((W // 2 - 160 * pe, cy - 160 * pe, W // 2 + 160 * pe, cy + 160 * pe), fill=(36, 64, 104, 255))
-        em = emoji(b.get("emoji"), max(10, int(220 * pe)))
+        cy = 735; dl.ellipse((W // 2 - 135 * pe, cy - 135 * pe, W // 2 + 135 * pe, cy + 135 * pe), fill=(36, 64, 104, 255))
+        em = emoji(b.get("emoji"), max(10, int(180 * pe)))
         if em: lay.paste(em, (int(W // 2 - em.width / 2), int(cy - em.height / 2)), em)
     paste(img, lay, 1, dx=(1 - p) * W * 0.9)
     return img
@@ -355,10 +355,10 @@ def s_card(t, dur, b, gt):
 def s_statement(t, dur, b, gt):
     img = bg(gt); d = ImageDraw.Draw(img); brand(d)
     p = eb(t / 0.3); lay = layer(); dl = ImageDraw.Draw(lay)
-    pill(lay, dl, b.get("badge", "ATENÇÃO"), b.get("badge_emoji", "⚠️"), cx=W / 2, y=330, h=82, fill=RED, col=WHITE, size=44)
+    pill(lay, dl, b.get("badge", "ATENÇÃO"), b.get("badge_emoji", "⚠️"), cx=W / 2, y=330, h=70, fill=RED, col=WHITE, size=36)
     paste(img, lay, 1, scale=0.5 + 0.5 * p, cx=W // 2, cy=371)
     t1 = 0.35; lines = b.get("lines", [])
-    f = M(900, min([fit(l, 900, CW, 96).size for l in lines] or [96]))
+    f = M(900, min([fit(l, 900, CW, 76).size for l in lines] or [76]))
     for i, ln in enumerate(lines):
         a = eo((t - t1 - i * 0.12) / 0.3)
         if a <= 0: continue
@@ -368,15 +368,15 @@ def s_statement(t, dur, b, gt):
     if hl:
         th = t_of(b, b.get("highlight_key"), 1.2) - 0.15
         if t > th:
-            pp = eo((t - th) / 0.35); f2 = fit(hl, 900, CW - 60, 110); tw = d.textlength(hl, font=f2)
+            pp = eo((t - th) / 0.35); f2 = fit(hl, 900, CW - 60, 86); tw = d.textlength(hl, font=f2)
             x0 = W / 2 - tw / 2 - 26; y0 = 490 + len(lines) * (f.size + 12) + 10
             d.rectangle((x0, y0, x0 + (tw + 52) * pp, y0 + f2.size + 34), fill=AMBER)
             if pp > 0.4: d.text((W // 2, y0 + 16), hl, font=f2, fill=NAVY, anchor="mt")
     tc = t_of(b, b.get("follow_key"), dur * 0.5) - 0.2
     if t > tc and (b.get("follow1") or b.get("follow2")):
         a = eo((t - tc) / 0.4); lay = layer(); dl = ImageDraw.Draw(lay)
-        if b.get("follow1"): dl.text((W // 2, 1080), b["follow1"], font=fit(b["follow1"], 700, CW, 52), fill=WHITE, anchor="mt")
-        if b.get("follow2"): dl.text((W // 2, 1150), b["follow2"], font=fit(b["follow2"], 700, CW, 52), fill=AMBER, anchor="mt")
+        if b.get("follow1"): dl.text((W // 2, 1080), b["follow1"], font=fit(b["follow1"], 700, CW, 46), fill=WHITE, anchor="mt")
+        if b.get("follow2"): dl.text((W // 2, 1150), b["follow2"], font=fit(b["follow2"], 700, CW, 46), fill=AMBER, anchor="mt")
         if b.get("source"): dl.text((W // 2, 1250), b["source"], font=fit(b["source"], 500, CW, 32), fill=DIM, anchor="mt")
         paste(img, lay, a, dy=(1 - a) * 30)
     return img
@@ -384,38 +384,38 @@ def s_statement(t, dur, b, gt):
 def s_list(t, dur, b, gt):
     img = bg(gt); d = ImageDraw.Draw(img); brand(d)
     a = eo(t / 0.3); lay = layer(); dl = ImageDraw.Draw(lay)
-    dl.text((W // 2, 320), b["title1"], font=fit(b["title1"], 900, CW, 64), fill=WHITE, anchor="mt")
-    dl.text((W // 2, 400), b["title2"], font=fit(b["title2"], 900, CW, 64), fill=AMBER, anchor="mt")
+    dl.text((W // 2, 320), b["title1"], font=fit(b["title1"], 900, CW, 54), fill=WHITE, anchor="mt")
+    dl.text((W // 2, 385), b["title2"], font=fit(b["title2"], 900, CW, 54), fill=AMBER, anchor="mt")
     paste(img, lay, a, dy=(1 - a) * 30)
     for i, it in enumerate(b["items"]):
         tp = t_of(b, it.get("key"), 0.5 + i * 0.8) - 0.15
         if t < tp: continue
-        p = eb((t - tp) / 0.32); lay = layer(); dl = ImageDraw.Draw(lay); y = 560 + i * 230
-        dl.rounded_rectangle((MX, y, W - MX, y + 180), 32, fill=(24, 46, 78))
-        dl.rounded_rectangle((MX + 20, y + 20, MX + 160, y + 160), 24, fill=AMBER)
-        dl.text((MX + 90, y + 92), it["tok"], font=fit(it["tok"], 900, 110, 66), fill=NAVY, anchor="mm")
-        dl.text((MX + 195, y + 90), it["label"], font=fit(it["label"], 800, CW - 235, 48), fill=WHITE, anchor="lm")
+        p = eb((t - tp) / 0.32); lay = layer(); dl = ImageDraw.Draw(lay); y = 540 + i * 200
+        dl.rounded_rectangle((MX, y, W - MX, y + 150), 28, fill=(24, 46, 78))
+        dl.rounded_rectangle((MX + 18, y + 18, MX + 132, y + 132), 22, fill=AMBER)
+        dl.text((MX + 75, y + 77), it["tok"], font=fit(it["tok"], 900, 90, 54), fill=NAVY, anchor="mm")
+        dl.text((MX + 160, y + 75), it["label"], font=fit(it["label"], 800, CW - 190, 40), fill=WHITE, anchor="lm")
         paste(img, lay, cl(p * 1.4), dx=(1 - p) * -500)
     return img
 
 def s_check(t, dur, b, gt):
     img = bg(gt); d = ImageDraw.Draw(img); brand(d)
     a = eo(t / 0.3); lay = layer(); dl = ImageDraw.Draw(lay)
-    dl.text((W // 2, 320), b.get("kicker", ""), font=fit(b.get("kicker", "") or " ", 800, CW, 40), fill=SOFT, anchor="mt")
-    dl.text((W // 2, 390), b["title"], font=fit(b["title"], 900, CW, 96), fill=WHITE, anchor="mt")
+    dl.text((W // 2, 320), b.get("kicker", ""), font=fit(b.get("kicker", "") or " ", 800, CW, 34), fill=SOFT, anchor="mt")
+    dl.text((W // 2, 380), b["title"], font=fit(b["title"], 900, CW, 78), fill=WHITE, anchor="mt")
     paste(img, lay, a, scale=0.8 + 0.2 * eb(t / 0.35), cx=W // 2, cy=440)
     for i, it in enumerate(b["items"]):
-        y = 620 + i * 200; lay = layer(); dl = ImageDraw.Draw(lay)
-        dl.rounded_rectangle((MX, y, W - MX, y + 160), 30, fill=(24, 46, 78))
-        dl.rounded_rectangle((MX + 35, y + 35, MX + 125, y + 125), 18, outline=AMBER, width=6)
-        dl.text((MX + 160, y + 80), it["label"], font=fit(it["label"], 800, CW - 200, 54), fill=WHITE, anchor="lm")
+        y = 580 + i * 170; lay = layer(); dl = ImageDraw.Draw(lay)
+        dl.rounded_rectangle((MX, y, W - MX, y + 136), 28, fill=(24, 46, 78))
+        dl.rounded_rectangle((MX + 30, y + 31, MX + 104, y + 105), 16, outline=AMBER, width=5)
+        dl.text((MX + 135, y + 68), it["label"], font=fit(it["label"], 800, CW - 170, 44), fill=WHITE, anchor="lm")
         ai = eo((t - 0.15 - i * 0.1) / 0.3); paste(img, lay, ai, dy=(1 - ai) * 40)
         tp = t_of(b, it.get("key"), 0.6 + i * 0.9) - 0.05
         if t > tp:
             k = eb((t - tp) / 0.25); d2 = ImageDraw.Draw(img)
-            d2.rounded_rectangle((MX + 35, y + 35, MX + 125, y + 125), 18, fill=AMBER)
-            d2.line([(MX + 55, y + 82), (MX + 75, y + 102)], fill=NAVY, width=12)
-            if k > 0.5: d2.line([(MX + 75, y + 102), (MX + 108, y + 58)], fill=NAVY, width=12)
+            d2.rounded_rectangle((MX + 30, y + 31, MX + 104, y + 105), 16, fill=AMBER)
+            d2.line([(MX + 46, y + 69), (MX + 62, y + 86)], fill=NAVY, width=10)
+            if k > 0.5: d2.line([(MX + 62, y + 86), (MX + 90, y + 50)], fill=NAVY, width=10)
     return img
 
 def s_cta(t, dur, b, gt):
@@ -424,20 +424,20 @@ def s_cta(t, dur, b, gt):
     d.text((W // 2, 150), "JACKSON BUENO  ·  ADVOGADO TRABALHISTA", font=P("Medium", 26), fill=WHITE, anchor="mt")
     a = eo(t / 0.35); lay = layer(); dl = ImageDraw.Draw(lay)
     q = b.get("question", "Quer entender o seu caso?")
-    dl.text((W // 2, 1000), q, font=P("Bold", 56) if d.textlength(q, font=P("Bold", 56)) <= CW else fit(q, 800, CW, 56), fill=WHITE, anchor="mt")
+    dl.text((W // 2, 1000), q, font=P("Bold", 48) if d.textlength(q, font=P("Bold", 48)) <= CW else fit(q, 800, CW, 48), fill=WHITE, anchor="mt")
     paste(img, lay, a, dy=(1 - a) * 30)
     ts = t_of(b, b.get("key_site", "acesse"), 1.2) - 0.1
     if t > ts:
         p = eb((t - ts) / 0.4); lay = layer(); dl = ImageDraw.Draw(lay)
         site = b.get("site", SITE)
-        dl.rounded_rectangle((MX, 1100, W - MX, 1240), 34, fill=AMBER)
-        dl.text((W // 2, 1172), site, font=fit(site, 900, CW - 90, 76), fill=NAVY, anchor="mm")
-        dl.text((W // 2, 1280), b.get("sub", "Dr. Jackson Bueno · OAB/MG 211.217"), font=P("Medium", 36), fill=SOFT, anchor="mt")
-        paste(img, lay, cl(p * 1.5), scale=0.7 + 0.3 * p, cx=W // 2, cy=1175)
+        dl.rounded_rectangle((MX, 1095, W - MX, 1215), 30, fill=AMBER)
+        dl.text((W // 2, 1157), site, font=fit(site, 900, CW - 90, 60), fill=NAVY, anchor="mm")
+        dl.text((W // 2, 1280), b.get("sub", "Dr. Jackson Bueno · OAB/MG 211.217"), font=P("Medium", 32), fill=SOFT, anchor="mt")
+        paste(img, lay, cl(p * 1.5), scale=0.7 + 0.3 * p, cx=W // 2, cy=1160)
     tm = t_of(b, b.get("key_button", "mande"), dur * 0.6) - 0.1
     if t > tm and b.get("button"):
         p = eb((t - tm) / 0.35); lay = layer(); dl = ImageDraw.Draw(lay)
-        em = emoji(b.get("button_emoji", "🚛"), 46); txt = b["button"]; f = fit(txt, 800, CW - 140, 40)
+        em = emoji(b.get("button_emoji", "🚛"), 46); txt = b["button"]; f = fit(txt, 800, CW - 140, 36)
         ew = (em.width + 14) if em else 0; tw = dl.textlength(txt, font=f) + ew + 56
         dl.rounded_rectangle((W / 2 - tw / 2, 1370, W / 2 + tw / 2, 1450), 40, outline=WHITE, width=4)
         if em: lay.paste(em, (int(W / 2 - tw / 2 + 28), int(1410 - em.height / 2)), em)
