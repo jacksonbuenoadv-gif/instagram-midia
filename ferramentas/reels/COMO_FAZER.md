@@ -3,6 +3,13 @@
 Um Reels por semana, publicado às **12h (horário de Brasília)**, e um **story às 18h** do mesmo dia avisando do Reels.
 Português do Brasil, linguagem simples, sem juridiquês. O titular revisa depois e avisa se algo precisar mudar.
 
+## Padrão visual aprovado pelo titular (12/11/2026) — não mudar sem ele pedir
+- **Respiro nas laterais:** nenhum elemento inserido (cartões, faixas, títulos, listas, checklist, caixa do site, selo, etiquetas) chega a menos de 150 px das bordas (`MX = 150` em `reels.py`).
+- **Elementos discretos, não gigantes:** títulos de impacto com no máximo ~104 px de fonte (capa e gancho), ~76 px nos cartões e frases de destaque. Não aumente esses tamanhos; se um texto não couber, encurte ou quebre em duas linhas.
+- **Legendas animadas:** o tamanho atual (54 px, largura total) está aprovado — não mexer.
+- **Capa:** vídeo de banco em destaque (caminhão, máquina, situação) e a foto do titular só no selo redondo pequeno à direita; "DOENÇA DO TRABALHO" (ou a frase equivalente) no tamanho moderado do padrão, nunca de borda a borda.
+- Ao conferir as prévias, reprove qualquer quadro em que algo encoste nas laterais ou pareça grande demais.
+
 ## 1. Tema (sempre o nicho)
 - Sempre **acidente de trabalho** ou **doença ocupacional**. Alterne: se o último Reels (pasta `reels/`) foi de doença, faça acidente, e vice-versa.
 - Não repita o tema dos últimos 8 Reels.
@@ -59,7 +66,7 @@ Coloque a legenda no campo `"legenda"` do spec.
 cd ferramentas && npm i -s @fontsource/montserrat && cd ..
 python3 ferramentas/reels/reels.py reels/<data>/spec.json reels/<data> --preview
 ```
-Abra com Read `reels/<data>/capa.jpg`, `story.jpg` e cada quadro de `reels/<data>/preview/`: texto inteiro na tela, nada cortado, português correto, rosto do titular sem texto por cima. Corrija o spec e repita se preciso. Depois:
+Abra com Read `reels/<data>/capa.jpg`, `story.jpg` e cada quadro de `reels/<data>/preview/`: texto inteiro na tela, nada cortado, português correto, rosto do titular sem texto por cima, e o padrão visual acima respeitado (margens de respiro, elementos discretos). Corrija o spec e repita se preciso. Depois:
 ```
 python3 ferramentas/reels/reels.py reels/<data>/spec.json reels/<data>
 ```
