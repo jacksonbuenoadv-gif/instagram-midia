@@ -1,0 +1,124 @@
+{
+ "oab": "OAB/MG 211.217",
+ "story": true,
+ "slides": [
+  {
+   "type": "cover",
+   "style": "photo",
+   "photo": "fotos/jackson-retrato-terno.jpg",
+   "filter": "quente",
+   "kicker": "CAMINHONEIROS",
+   "title": "As doenças que mais *atingem caminhoneiros*",
+   "sub": "E por que muitas delas podem ser reconhecidas como doença do trabalho."
+  },
+  {
+   "type": "text",
+   "kicker": "O QUE A LEI DIZ",
+   "title": "Doença do trabalho *também é acidente*",
+   "paragraphs": [
+    "Para o INSS, a doença causada ou agravada pelo trabalho é **equiparada a acidente de trabalho**.",
+    "E o trabalho não precisa ser a única causa: se ele **contribuiu** para a doença (a chamada concausa), também conta."
+   ],
+   "src": "Arts. 20 e 21, I, da Lei 8.213/91"
+  },
+  {
+   "type": "list",
+   "kicker": "1 · COLUNA",
+   "title": "Hérnia de disco *e dor lombar*",
+   "items": [
+    {
+     "b": "Vibração do caminhão",
+     "span": "horas sobre a vibração do veículo sobrecarregam os discos da coluna."
+    },
+    {
+     "b": "Muitas horas sentado",
+     "span": "na mesma postura, com poucas pausas."
+    },
+    {
+     "b": "Carga e descarga",
+     "span": "esforço com peso logo depois de horas ao volante."
+    }
+   ]
+  },
+  {
+   "type": "text",
+   "kicker": "2 · OMBROS E BRAÇOS",
+   "title": "Bursite, tendinite *e LER/DORT*",
+   "paragraphs": [
+    "**Volante, câmbio e embreagem** o dia inteiro, por anos: são movimentos repetitivos que desgastam ombros, cotovelos e punhos.",
+    "Somam-se a isso o **esforço com a carga**: amarrar e enlonar, abrir o baú, puxar mercadoria."
+   ]
+  },
+  {
+   "type": "big",
+   "kicker": "3 · AUDIÇÃO",
+   "big": "PAIR",
+   "big_label": "perda auditiva por ruído",
+   "paragraphs": [
+    "Anos de **ruído do motor e da estrada** podem causar uma perda auditiva lenta, silenciosa e permanente.",
+    "**Zumbido** e dificuldade para entender conversas são sinais de alerta."
+   ]
+  },
+  {
+   "type": "list",
+   "kicker": "E TEM MAIS",
+   "title": "Doenças que poucos *ligam à estrada*",
+   "items": [
+    {
+     "b": "Ansiedade, depressão e burnout",
+     "span": "pressão por prazos e longos períodos longe de casa. Foram incluídos na lista oficial de doenças do trabalho em 2023."
+    },
+    {
+     "b": "Distúrbios do sono",
+     "span": "jornadas longas e direção noturna desregulam o sono."
+    }
+   ],
+   "src": "Lista de Doenças Relacionadas ao Trabalho (Portaria GM/MS 1.999/2023)"
+  },
+  {
+   "type": "checklist",
+   "kicker": "SENTIU ALGUM DESSES SINTOMAS?",
+   "title": "O que *fazer*",
+   "items": [
+    {
+     "t": "Procure um médico",
+     "small": "guarde consultas, exames e atestados com o CID"
+    },
+    {
+     "t": "Peça a CAT",
+     "small": "a empresa deve emitir; se não emitir, você mesmo pode"
+    },
+    {
+     "t": "Afastou? Confira o código",
+     "small": "B91 (acidentário) dá estabilidade e FGTS; B31, em regra, não"
+    },
+    {
+     "t": "Guarde provas da rotina",
+     "small": "jornada, rotas, tipo de caminhão, carga e descarga"
+    }
+   ]
+  },
+  {
+   "type": "options",
+   "title": "Se a doença tem relação *com o trabalho*",
+   "intro": "O caminhoneiro pode ter direito a:",
+   "options": [
+    {
+     "b": "No INSS",
+     "span": "auxílio acidentário (B91) e, se ficar sequela, auxílio-acidente."
+    },
+    {
+     "b": "Na empresa",
+     "span": "estabilidade de 12 meses e, havendo culpa, indenização."
+    }
+   ],
+   "warn": "⚖️ Cada caso depende de perícia médica e de provas da rotina de trabalho."
+  },
+  {
+   "type": "cta",
+   "title": "A estrada *também adoece.*",
+   "text": "Ficou com dúvida sobre a sua saúde e os seus direitos? Envie sua pergunta pelo **link na bio** e receba uma orientação.",
+   "button": "Envie para um caminhoneiro"
+  }
+ ]
+}
