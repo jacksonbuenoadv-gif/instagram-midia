@@ -4,7 +4,13 @@ Requisitos: npm i @fontsource/playfair-display @fontsource/montserrat (na mesma 
 pip install playwright pillow; Chrome em /usr/bin/google-chrome (ou ajuste CHROME).
 Marcacao nos textos: *texto* = destaque dourado em italico (titulos); **texto** = negrito.
 Tipos de slide (campo "type"):
- cover    {kicker, title, sub, photo?}   photo = caminho de uma foto real (ex.: "fotos/obra-andaime.jpg", relativo à raiz do repositório)
+ cover    {kicker, title, sub, style?, photo?, filter?}
+          style: "classic" (padrão, fundo azul sem foto) | "photo" (foto de fundo inteira, texto embaixo)
+                 | "split" (texto à esquerda, foto vertical à direita; use fotos *_vertical.jpg)
+                 | "gold" (fundo dourado, texto azul, sem foto) | "light" (fundo claro, sem foto)
+          photo: caminho relativo à raiz do repositório (ex.: "fotos/jackson-retrato-terno.jpg"); obrigatório em photo/split
+          filter: "" | "pb" (preto e branco) | "quente" | "duotone" (azul e dourado)
+          VARIE o estilo: não repita o mesmo estilo de capa em dois dias seguidos.
  big      {kicker, big, big_label, paragraphs[], src}
  cards    {title, cards:[{code, tag, ok:bool, items:[{y:bool, text}]}], tip}   (2 cartoes; ok=true destaca em dourado)
  list     {kicker?, title, intro?, items:[{b, span}], src?}                     (2 a 4 itens numerados)
@@ -100,6 +106,22 @@ body:not(.light) .row span{{color:#c9ccd3}}
 .ph:after{{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,13,25,.55) 0%,rgba(8,13,25,.35) 30%,rgba(8,13,25,.88) 62%,#080d19 100%)}}
 body.photo .main{{justify-content:flex-end}}
 body.story{{height:1920px}} body.story .main{{top:300px;bottom:330px}}
+.ph.pb{{filter:grayscale(1) contrast(1.05)}} .ph.quente{{filter:sepia(.25) saturate(1.1)}}
+.ph.duotone{{filter:grayscale(1) contrast(1.1)}} .ph.duotone:before{{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(218,168,67,.55),rgba(15,22,36,.75));mix-blend-mode:color;z-index:1}}
+.sph{{position:absolute;top:0;right:0;bottom:0;width:46%;background-size:cover;background-position:center top}}
+.sph:after{{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0e1422 0%,rgba(14,20,34,.75) 14%,rgba(14,20,34,.25) 32%,rgba(14,20,34,0) 50%),linear-gradient(0deg,rgba(8,13,25,.7) 0%,rgba(8,13,25,0) 18%)}}
+.sph.pb{{filter:grayscale(1)}} .sph.quente{{filter:sepia(.25) saturate(1.1)}} .sph.duotone{{filter:grayscale(1) sepia(.35)}}
+body.split .main{{right:calc(44% + 30px)}} body.split h1{{font-size:70px}} body.split .p{{font-size:32px}}
+body.split .count{{text-shadow:0 2px 8px #000}}
+body.gold{{background:linear-gradient(135deg,#f1ba4b 0%,#daa843 45%,#ba882e 100%);color:#0f1624}}
+body.gold .brand b,body.gold h1{{color:#0f1624}} body.gold .mono{{border-color:#0f1624;color:#0f1624}} body.gold .brand small{{color:#0f1624;opacity:.75}}
+body.gold em{{color:#fbf8f2}} body.gold .p{{color:#1d2433}} body.gold .bar{{background:#0f1624}}
+body.gold .kicker{{color:#0f1624;border-color:#0f1624}} body.gold .count,body.gold .handle{{color:#2a3142}} body.gold .swipe{{color:#0f1624}}
+body.lightc{{background:linear-gradient(180deg,#fbf8f2 0%,#f1ece1 100%);color:#0f1624}}
+body.lightc .brand b,body.lightc h1{{color:#0f1624}} body.lightc em{{color:#ba882e}} body.lightc .p{{color:#383d48}}
+body.lightc .kicker{{color:#ba882e;border-color:#ba882e}} body.lightc .count,body.lightc .handle{{color:#5b6070}}
+.qmark{{position:absolute;right:-40px;bottom:120px;font-family:PF;font-weight:800;font-size:900px;line-height:1;opacity:.08}}
+body.gold .qmark{{color:#0f1624;opacity:.10}} body.lightc .qmark{{color:#ba882e;opacity:.12}}
 .storytag{{position:absolute;left:84px;right:84px;bottom:150px;text-align:center;font-size:34px;font-weight:700;color:#0f1624;background:linear-gradient(135deg,#f1ba4b,#ba882e);border-radius:999px;padding:30px}}
 """
 
@@ -110,14 +132,20 @@ def md(s, em_style=""):
 
 REPO = BASE.parent  # raiz do repositório (fotos/ fica aqui)
 
-def page(n, body, light=False, last=False, photo=None, story=False):
+def page(n, body, light=False, last=False, photo=None, story=False, style="classic", filt=""):
     swipe = "" if (last or story) else '<div class="swipe">Arraste →</div>'
-    cls = " ".join(c for c in ["light" if light else "", "photo" if photo else "", "story" if story else ""] if c)
+    if photo and style == "classic": style = "photo"
+    cls = " ".join(c for c in ["light" if light else "", "story" if story else "",
+                               {"photo": "photo", "split": "split", "gold": "gold", "light": "lightc"}.get(style, "")] if c)
     bg = ""
-    if photo:
+    if style in ("photo", "split"):
+        if not photo: raise ValueError(f"o estilo {style} exige o campo photo")
         ph = (REPO / photo).resolve()
         if not ph.exists(): raise FileNotFoundError(f"foto não encontrada: {ph}")
-        bg = f'<div class="ph" style="background-image:url({ph.as_uri()})"></div>'
+        klass = "ph" if style == "photo" else "sph"
+        bg = f'<div class="{klass} {filt}" style="background-image:url({ph.as_uri()})"></div>'
+    elif style in ("gold", "light"):
+        bg = '<div class="qmark">?</div>'
     elif not light:
         bg = '<div class="glow"></div>'
     tag = '<div class="storytag">Novo post no perfil · @jacksonbueno.adv</div>' if story else ""
@@ -138,7 +166,7 @@ def src(s): return f'<div class="src">{s["src"]}</div>' if s.get("src") else ""
 def render(s, n, story=False):
     t = s["type"]
     if t == "cover":
-        return page(n, f'{kick(s)}<h1>{md(s["title"])}</h1><div class="bar"></div><p class="p">{md(s.get("sub",""))}</p>', photo=s.get("photo"), story=story)
+        return page(n, f'{kick(s)}<h1>{md(s["title"])}</h1><div class="bar"></div><p class="p">{md(s.get("sub",""))}</p>', photo=s.get("photo"), story=story, style=s.get("style","classic"), filt=s.get("filter",""))
     if t == "big":
         ps = "".join(f'<p class="p"{" style=\"margin-top:24px\"" if i else ""}>{md(p)}</p>' for i,p in enumerate(s.get("paragraphs",[])))
         return page(n, f'{kick(s)}<div class="big">{s["big"]}<span>{s["big_label"]}</span></div><div class="bar"></div>{ps}{src(s)}')
