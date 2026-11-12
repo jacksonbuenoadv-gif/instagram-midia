@@ -13,3 +13,5 @@ Receberam um retoque leve de pele e recortes; a caneca com logo de outro escrit�
 | *_vertical.jpg (5 arquivos) | capa "split" (foto na lateral direita) |
 
 Filtros disponíveis no gerador para variar o visual: "pb" (preto e branco), "quente", "duotone".
+
+| jackson-mesa-sorrindo_cta.jpg | encerramento dos Reels (sorrindo à mesa; recorte vertical sem a caneca BNV), enviado pelo titular em 12/11/2026 |

@@ -7,3 +7,5 @@ Hospedagem pública das imagens do Instagram @jacksonbueno.adv (Jackson Bueno Ad
 - `fotos/` – banco de fotos reais (próprias ou de bancos com licença de uso comercial). Registre a origem de cada foto em `fotos/CREDITOS.md`.
 
 Links públicos: `https://raw.githubusercontent.com/jacksonbuenoadv-gif/instagram-midia/main/<caminho>`
+- `reels/AAAA-MM-DD/` – Reels semanais: `reel.mp4`, `capa.jpg`, `story.jpg` (aviso do Reels), `legenda.txt`, `spec.json` e `publicado.txt`.
+- `ferramentas/reels/` – gerador de Reels (`reels.py`, instruções no cabeçalho), banco de vídeos em `stock/` e o passo a passo semanal em `COMO_FAZER.md`.
