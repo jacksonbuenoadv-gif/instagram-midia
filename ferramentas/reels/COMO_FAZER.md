@@ -10,6 +10,15 @@ Português do Brasil, linguagem simples, sem juridiquês. O titular revisa depoi
 - **Capa:** vídeo de banco em destaque (caminhão, máquina, situação) e a foto do titular só no selo redondo pequeno à direita; "DOENÇA DO TRABALHO" (ou a frase equivalente) no tamanho moderado do padrão, nunca de borda a borda.
 - Ao conferir as prévias, reprove qualquer quadro em que algo encoste nas laterais ou pareça grande demais.
 
+## Narração (orientação do titular de 12/11/2026, até ele mudar)
+- Use **duas vozes sintéticas, uma mulher e um homem** — nunca a voz do titular.
+- No spec: `"voz": "dupla"` no topo e, em cada cena, `"voz": "mulher"` ou `"voz": "homem"`, montando um bate-papo:
+  a mulher costuma puxar o assunto (gancho, perguntas, situações do dia a dia, "o que fazer") e o homem responde/explica
+  (resposta da capa, direitos, encerramento com o site). Evite a mesma voz em mais de 2 cenas seguidas.
+- Cada frase é conferida automaticamente por transcrição e refeita se sair errada (ver log "voz ... tentativa").
+  Se no log uma palavra importante continuar errada depois das tentativas, troque a palavra por um sinônimo simples e gere de novo.
+- A narração com essas vozes leva ~10 min no total (modelo roda em CPU). A primeira execução instala o modelo (~3 GB).
+
 ## 1. Tema (sempre o nicho)
 - Sempre **acidente de trabalho** ou **doença ocupacional**. Alterne: se o último Reels (pasta `reels/`) foi de doença, faça acidente, e vice-versa.
 - Não repita o tema dos últimos 8 Reels.
@@ -38,6 +47,7 @@ Crie `reels/<AAAA-MM-DD>/spec.json` seguindo o modelo `reels/2026-11-12/spec.jso
   8. `cta`: "Quer entender o seu caso? Acesse jacksonbueno.adv.br" + "Envie para <quem precisa ver>".
 - Clipes: escolha em `ferramentas/reels/stock/README.md` o que combina com cada cena. Se faltar um clipe ideal, use o mais próximo (ex.: `dor_homem_careta` serve para quase todo gancho de dor).
 - `key` = palavra do texto narrado no momento em que a animação deve aparecer.
+- Não esqueça `"voz": "dupla"` no topo e `"voz"` em cada cena (ver "Narração").
 
 ## 4. Legenda (copy)
 Curta, fácil de ler, com ícones e hashtags. Modelo:

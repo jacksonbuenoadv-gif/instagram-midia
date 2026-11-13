@@ -22,6 +22,10 @@ SPEC (JSON)
   "legenda": "texto da legenda (copy)",  # vai para legenda.txt
   "beats": [ cena, cena, ... ]          # cada cena vira um trecho com narração própria
 }
+Narração: "voz" no topo do spec = "dupla" (mulher e homem alternando; cada cena pode fixar "voz": "mulher" ou "homem"),
+"mulher", "homem", "piper" (voz simples, rápida) ou "titular" (voz do titular; exige REELS_VOZ_REF). Padrão atual: "dupla".
+As vozes "mulher"/"homem" são sintéticas (modelo Chatterbox Multilingual, licença MIT, CPU, ~8x o tempo real) e cada frase
+é conferida por transcrição automática (faster-whisper) e refeita se sair errada.
 Toda cena tem "kind", "say" (texto narrado; siglas são convertidas para pronúncia: INSS, CAT, FGTS, B91,
 B31, LER, DORT, site...) e, opcionalmente, "cap" (legenda animada na tela; use null para não mostrar).
 Se "cap" não for informado, a legenda usa o próprio "say". Palavras-chave ("key") são palavras do "cap"
@@ -449,9 +453,9 @@ R = dict(hook=s_hook, cover=s_cover, montage=s_montage, card=s_card, statement=s
 TAIL = {"cta": 2.2, "cover": 0.7, "hook": 0.12}
 
 # ---------------- voz ----------------
-# Padrão: voz sintética Piper (pt_BR faber). Com a variável de ambiente REELS_VOZ_REF apontando para um .wav
-# limpo (15–25 s) da voz do titular, usa clonagem de voz (Chatterbox Multilingual, licença MIT, roda em CPU).
-_cb = None; _wh = None
+# Vozes: ver tts(). "mulher"/"homem" sintéticas (Chatterbox); "titular" usa REELS_VOZ_REF (.wav limpo de 15–25 s)
+# com a voz do titular (só se ele pedir; a amostra nunca vai para o repositório público).
+_cb = None; _cb_default = None; _wh = None
 def _check(path, expected):
     """Transcreve o áudio (faster-whisper) e devolve a semelhança 0–1 com o texto esperado."""
     global _wh
@@ -464,42 +468,73 @@ def _check(path, expected):
     sh(["ffmpeg", "-y", "-loglevel", "error", "-i", path, "-ar", "16000", "-ac", "1", path + ".16k.wav"])
     a, _ = sf.read(path + ".16k.wav", dtype="float32"); os.remove(path + ".16k.wav")
     got = " ".join(x.text for x in _wh.transcribe(a, language="pt", beam_size=3)[0])
-    n = lambda z: re.sub(r"[^a-zà-ú0-9 ]", "", z.lower())
-    return difflib.SequenceMatcher(None, n(got), n(expected)).ratio(), got
+    import unicodedata
+    def n(z):
+        z = unicodedata.normalize("NFD", z.lower()); z = "".join(c for c in z if unicodedata.category(c) != "Mn")
+        return " ".join(w[1:] if w.startswith("h") else w for w in re.sub(r"[^a-z0-9 ]", " ", z).split())
+    ratio = difflib.SequenceMatcher(None, n(got), n(expected)).ratio()
+    exp_w = [w for w in n(expected).split() if len(w) >= 4]; got_w = n(got).split(); joined = n(got).replace(" ", "")
+    def ok(w): return w in joined or any(difflib.SequenceMatcher(None, w, g).ratio() >= 0.85 for g in got_w)
+    recall = sum(1 for w in exp_w if ok(w)) / max(1, len(exp_w))   # palavras importantes reconhecidas
+    return min(ratio, recall), got
 
-def tts(text, out, expected=None):
-    ref = os.environ.get("REELS_VOZ_REF")
-    if not ref:
+VOZ_DIR = os.path.join(HERE, "voz")
+def tts(text, out, expected=None, voz=None):
+    """voz: "mulher" (voz padrão do modelo, sintética), "homem" (sintética, referência voz/homem_ref.wav, gerada pelo Piper),
+    "titular" (exige REELS_VOZ_REF com a amostra da voz do titular) ou "piper" (voz Piper simples, rápida)."""
+    voz = voz or os.environ.get("REELS_VOZ", "piper")
+    if voz == "piper":
         sh([sys.executable, "-m", "piper", "-m", VOICE, "-f", out, "--length-scale", "0.86", "--sentence-silence", "0.1"],
            input=text.encode(), capture_output=True)
         return
-    import hashlib
+    ref = {"mulher": None, "homem": os.path.join(VOZ_DIR, "homem_ref.wav"), "titular": os.environ.get("REELS_VOZ_REF")}[voz]
+    if voz == "titular" and not ref: sys.exit("voz 'titular' exige REELS_VOZ_REF")
+    exag = os.environ.get("REELS_VOZ_EXAG", "0.55")
+    import hashlib, copy
     cache = os.path.join(WORK, "voz_cache"); os.makedirs(cache, exist_ok=True)
-    key = hashlib.sha1((text + "|" + ref + "|" + os.environ.get("REELS_VOZ_EXAG", "0.55")).encode()).hexdigest()[:16]
+    key = hashlib.sha1((text + "|" + voz + "|" + str(ref) + "|" + exag).encode()).hexdigest()[:16]
     cp = os.path.join(cache, key + ".wav")
-    if os.path.exists(cp): shutil.copy(cp, out); return
-    global _cb
+    # ajuste de tom para as vozes ficarem bem distintas (preserva o timbre)
+    PITCH = {"mulher": float(os.environ.get("REELS_PITCH_MULHER", "1.18")), "homem": float(os.environ.get("REELS_PITCH_HOMEM", "0.95"))}
+    def finish(src):
+        pt = PITCH.get(voz)
+        if pt and abs(pt - 1) > 0.01: sh(["ffmpeg", "-y", "-loglevel", "error", "-i", src, "-af", f"rubberband=pitch={pt}:formant=preserved", out])
+        else: shutil.copy(src, out)
+    if os.path.exists(cp): finish(cp); return
+    global _cb, _cb_default
     import torch, soundfile as sf
     torch.set_num_threads(os.cpu_count() or 2)
     if _cb is None:
-        from chatterbox.mtl_tts import ChatterboxMultilingualTTS
-        _cb = ChatterboxMultilingualTTS.from_pretrained(device="cpu")
+        try:
+            from chatterbox.mtl_tts import ChatterboxMultilingualTTS
+        except ImportError:
+            sh([sys.executable, "-m", "pip", "install", "-q", "--break-system-packages", "torch", "torchaudio"])
+            sh([sys.executable, "-m", "pip", "install", "-q", "--break-system-packages", "--no-deps", "chatterbox-tts"])
+            sh([sys.executable, "-m", "pip", "install", "-q", "--break-system-packages", "librosa==0.11.0", "s3tokenizer", "transformers==5.2.0",
+                "diffusers==0.29.0", "resemble-perth>=1.0.0", "conformer==0.3.2", "safetensors", "pyloudnorm", "omegaconf", "soundfile"])
+            from chatterbox.mtl_tts import ChatterboxMultilingualTTS
+        _cb = ChatterboxMultilingualTTS.from_pretrained(device="cpu"); _cb_default = copy.deepcopy(_cb.conds)
     best = (-1, None)
-    for tent in range(3):   # gera, confere por transcrição e refaz se alguma palavra saiu errada
-        w = _cb.generate(text, language_id="pt", audio_prompt_path=ref, exaggeration=float(os.environ.get("REELS_VOZ_EXAG", "0.55")), cfg_weight=0.5)
+    for tent in range(4):   # gera, confere por transcrição e refaz se alguma palavra saiu errada
+        if ref is None:
+            _cb.conds = copy.deepcopy(_cb_default)
+            w = _cb.generate(text, language_id="pt", exaggeration=float(exag), cfg_weight=0.5)
+        else:
+            w = _cb.generate(text, language_id="pt", audio_prompt_path=ref, exaggeration=float(exag), cfg_weight=0.5)
         raw = out + f".raw{tent}.wav"; sf.write(raw, w.squeeze(0).cpu().numpy(), _cb.sr)
         fin = out + f".t{tent}.wav"
         sh(["ffmpeg", "-y", "-loglevel", "error", "-i", raw, "-af",
             "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
-            f"atempo={os.environ.get('REELS_VOZ_TEMPO', '1.06')},highpass=f=70", "-ar", "22050", fin])
+            f"atempo={os.environ.get('REELS_VOZ_TEMPO', '1.08')},highpass=f=70", "-ar", "22050", fin])
         os.remove(raw)
         sc, got = _check(fin, expected or text)
-        print(f"  voz {os.path.basename(out)} tentativa {tent + 1}: {sc:.2f} | {got.strip()}", flush=True)
+        print(f"  voz {voz} {os.path.basename(out)} tentativa {tent + 1}: {sc:.2f} | {got.strip()}", flush=True)
         if sc > best[0]: best = (sc, fin)
-        if sc >= 0.9: break
-    shutil.copy(best[1], out); shutil.copy(best[1], cp)
-    for f in os.listdir(os.path.dirname(out) or "."):
-        if f.startswith(os.path.basename(out) + ".t"): os.remove(os.path.join(os.path.dirname(out) or ".", f))
+        if sc >= 0.86: break
+    shutil.copy(best[1], cp); finish(cp)
+    d = os.path.dirname(out) or "."
+    for f in os.listdir(d):
+        if f.startswith(os.path.basename(out) + ".t"): os.remove(os.path.join(d, f))
 
 # ---------------- áudio ----------------
 def dur_of(p): return float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", p]))
@@ -567,7 +602,9 @@ def main():
     acc = 0.0
     for i, b in enumerate(beats):
         b["id"] = f"b{i:02d}"; p = f"{wd}/{b['id']}.wav"
-        tts(speakable(b["say"]), p, expected=b["say"])
+        voz = b.get("voz") or spec.get("voz")
+        if spec.get("voz") == "dupla" and not b.get("voz"): voz = "mulher" if i % 2 == 0 else "homem"
+        tts(speakable(b["say"]), p, expected=b["say"], voz=voz)
         sp = dur_of(p); b["dur"] = round(sp + TAIL.get(b["kind"], 0.22), 3); b["start"] = acc; acc += b["dur"]
         cap = b.get("cap", b["say"]); b["_cap"] = cap
         b["_wt"] = word_times(cap or b["say"], sp - 0.15); b["_ch"] = chunks(b["_wt"])
