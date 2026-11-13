@@ -11,6 +11,17 @@ A rotina diária segue esta fila antes da programação normal. Depois de public
 | 2026-11-16 | CAMINHONEIROS: "As doenças que mais atingem caminhoneiros" (pedido do titular; pronto em posts/2026-11-16, NÃO refazer) | pronto |
 | depois | Programação normal (inclua caminhoneiros de vez em quando, cerca de 1 vez a cada 7 a 10 dias) | |
 
+## Foco definido pelo titular em 13/11/2026 (vale para todos os posts)
+- Foco principal: ACIDENTE DE TRABALHO e DOENÇA OCUPACIONAL (incluindo os temas de INSS, CAT, estabilidade e indenização ligados a eles). Alterne entre os dois.
+- Outras verbas trabalhistas (insalubridade, horas extras, FGTS etc.): no máximo 1 vez a cada 10 dias, e de preferência ligadas à saúde e segurança.
+- Caminhoneiros continuam, mas sempre pelo ângulo de acidente ou doença.
+- DOENÇA OCUPACIONAL: fale do jeito que as pessoas perguntam nas redes e no Google, sem dificultar.
+  - Comece pelo sintoma ou pela situação, não pelo nome técnico: "dor nas costas", "dor no ombro", "formigamento na mão", "dormência", "zumbido no ouvido", "perda de audição", "alergia na pele", "falta de ar", "ansiedade", "depressão", "crise de pânico", "burnout", "cansaço", "insônia".
+  - Títulos em forma de pergunta do dia a dia: "Dor nas costas por causa do trabalho dá direito?", "Tenho zumbido no ouvido por causa do barulho da empresa, e agora?".
+  - Nome técnico (hérnia de disco, LER/DORT, PAIR, dermatite) só como complemento, entre parênteses ou num slide de explicação.
+  - Frases curtas, palavras simples, nada de juridiquês. Base legal no rodapé do slide, sem pesar o texto.
+  - Para achar a pergunta: WebSearch com o sintoma + "trabalho" e veja como as pessoas escrevem (perguntas do Google, comentários, fóruns), além de dados/pautas_search_console.md.
+
 ## Regras de capa (pedido do titular: capas não podem ficar com a mesma cara)
 - Estilos: classic, photo, split, gold, light (ver cabeçalho de ferramentas/gerar.py).
 - Nunca repita o estilo do dia anterior; em cada 5 dias, use pelo menos 3 estilos diferentes.
