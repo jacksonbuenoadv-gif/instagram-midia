@@ -2,3 +2,5 @@ node_modules/
 *.html
 *.png
 __pycache__/
+ferramentas/package.json
+ferramentas/package-lock.json

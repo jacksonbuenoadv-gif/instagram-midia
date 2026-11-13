@@ -7,7 +7,7 @@ Use quando o Search Console não estiver disponível pelo Windsor (por exemplo, 
 |---|---|---|
 | CAT: o que é, para que serve, quem abre ("cat", "o que é cat") | ~650 | 11/11/2026 |
 | B31 x B91: significado, diferenças, valor ("b31", "b91 inss significado") | ~370 | 10/11/2026 (parcial: estabilidade) |
-| Alergia/dermatite por cimento, óleo diesel, graxa, produtos de limpeza | ~125 | |
+| Alergia/dermatite por cimento, óleo diesel, graxa, produtos de limpeza | ~125 | 13/11/2026 (cimento) |
 | Depois de acidente de trabalho posso ser demitido? | ~65 | 10/11/2026 |
 | Advogado de acidente de trabalho (busca por serviço) | ~120 | |
 | Pensão alimentícia: FGTS e rescisão (outras verbas) | ~30 | |

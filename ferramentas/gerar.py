@@ -122,6 +122,7 @@ body.lightc .brand b,body.lightc h1{{color:#0f1624}} body.lightc em{{color:#ba88
 body.lightc .kicker{{color:#ba882e;border-color:#ba882e}} body.lightc .count,body.lightc .handle{{color:#5b6070}}
 .qmark{{position:absolute;right:-40px;bottom:120px;font-family:PF;font-weight:800;font-size:900px;line-height:1;opacity:.08}}
 body.gold .qmark{{color:#0f1624;opacity:.10}} body.lightc .qmark{{color:#ba882e;opacity:.12}}
+body.gold .storytag{{background:#0f1624 !important;color:#daa843 !important}}
 .storytag{{position:absolute;left:84px;right:84px;bottom:150px;text-align:center;font-size:34px;font-weight:700;color:#0f1624;background:linear-gradient(135deg,#f1ba4b,#ba882e);border-radius:999px;padding:30px}}
 """
 
