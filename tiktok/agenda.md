@@ -8,7 +8,7 @@ Agendados (12h e 19h, horário de Brasília):
 |---|---|---|
 | 13/11 | carrossel posts/2026-11-10 | carrossel posts/2026-11-11 |
 | 14/11 | carrossel posts/2026-11-12 | DbGXQOqFrT8 (carrossel) |
-| 15/11 | DcPv_mmh_b7 (Reels) | DbM1Z-Ajok4 – SEM LEGENDA, refazer |
+| 15/11 | DcPv_mmh_b7 (Reels) | DbM1Z-Ajok4 |
 | 16/11 | DcTacyGB5x4 | DbM5oBljrr6 |
 | 17/11 | DcTloCHBxBy | DbM50QODi34 |
 | 18/11 | DcUXdRhhBM8 | DbNBBmmjgkz |
@@ -27,7 +27,10 @@ Agendados (12h e 19h, horário de Brasília):
 | 01/12 | Dd6fQlgB7bM | DbPk3-8jov0 |
 | 02/12 | DeXuvn6ukvC | DbPly7rDuiT |
 | 03/12 | DbPm8OAjtCL | DbPoDjkjq2H |
+| 04/12 | DbPoqhGDkY9 | DbPpjKvjsIe |
+| 05/12 | DbPqBznDruI | DbPq14sDgDL |
+| 06/12 | DbPrfVaDil2 | – |
 
-Falta agendar: DbPoqhGDkY9, DbPpjKvjsIe, DbPqBznDruI, DbPq14sDgDL, DbPrfVaDil2 (04/12 a 06/12).
+Todas as 48 publicações do Instagram estão no TikTok (1 publicada + 47 agendadas). Conferido em 13/11 no TikTok Studio: nenhuma sem legenda.
 
 Os códigos são os do Instagram (instagram.com/p/<código>); arquivos e legendas em `tiktok/instagram-antigo/`.
