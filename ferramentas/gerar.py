@@ -20,6 +20,7 @@ Tipos de slide (campo "type"):
  cta      {title, text, button}                                                  (sempre o ultimo; rodape com OAB)
 Spec: {"oab": "OAB/MG 211.217", "story": true, "slides": [...]}
 Com "story": true, gera também story.jpg (1080x1920) a partir da capa, para publicar nos Stories.
+Opcional: "story_tag" troca o texto do botão do story (padrão: "Novo post no perfil · @jacksonbueno.adv").
 """
 import sys, json, re, pathlib, os
 from playwright.sync_api import sync_playwright
@@ -149,7 +150,7 @@ def page(n, body, light=False, last=False, photo=None, story=False, style="class
         bg = '<div class="qmark">?</div>'
     elif not light:
         bg = '<div class="glow"></div>'
-    tag = '<div class="storytag">Novo post no perfil · @jacksonbueno.adv</div>' if story else ""
+    tag = f'<div class="storytag">{spec.get("story_tag", "Novo post no perfil · @jacksonbueno.adv")}</div>' if story else ""
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head>
 <body class="{cls}">{bg}{tag}
 <div class="top"><div class="brand"><div class="mono">JB</div><div><b>Jackson Bueno Advogados</b><small>DIREITO DO ACIDENTADO</small></div></div>
