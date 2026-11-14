@@ -6,7 +6,7 @@ A rotina diária segue esta fila antes da programação normal. Depois de public
 |---|---|---|
 | 2026-11-12 | CAMINHONEIROS: "Motorista de caminhão tem direito a hora extra?" (pronto em posts/2026-11-12) | pronto |
 | 2026-11-13 | Programação normal: acidente de trabalho OU doença ocupacional → feito: "Alergia ao cimento é doença do trabalho?" (doença ocupacional) | feito |
-| 2026-11-14 | Programação normal: ACIDENTE DE TRABALHO (13/11 foi doença ocupacional) | |
+| 2026-11-14 | Programação normal: ACIDENTE DE TRABALHO (13/11 foi doença ocupacional) → feito: "Me machuquei no trabalho: quem paga?" | feito |
 | 2026-11-15 | CAMINHONEIROS: "Acidente na estrada é acidente de trabalho? Quais os direitos do motorista?" (NÃO falar de doenças: o post de 16/11 já trata disso). Capa: NÃO usar o estilo "photo" (16/11 usa photo). | |
 | 2026-11-16 | CAMINHONEIROS: "As doenças que mais atingem caminhoneiros" (pedido do titular; pronto em posts/2026-11-16, NÃO refazer) | pronto |
 | depois | Programação normal (inclua caminhoneiros de vez em quando, cerca de 1 vez a cada 7 a 10 dias) | |

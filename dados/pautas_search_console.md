@@ -20,7 +20,7 @@ Use quando o Search Console não estiver disponível pelo Windsor (por exemplo, 
 | Metas abusivas, pressão, assédio moral | ~17 | |
 | Pulmão de pedra (silicose) | ~9 | |
 | Burnout é acidente de trabalho? | ~4 | |
-| Me machuquei no trabalho: quem paga as despesas? | ~5 | |
+| Me machuquei no trabalho: quem paga as despesas? | ~5 | 14/11/2026 |
 | Como provar doença ocupacional | ~4 | |
 
 Atualize a coluna "Já postado?" quando publicar um tema.
