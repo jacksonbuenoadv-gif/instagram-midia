@@ -1,0 +1,334 @@
+{
+ "tema": "A empresa é obrigada a emitir a CAT? Prazo, quem mais pode emitir e o que acontece se ela se recusar",
+ "data": "2026-11-14",
+ "fonte": "bruto.mp4",
+ "original": "EU VÍDEOS/CAT E OBRIGACAO.MOV (3min24s, 4K vertical)",
+ "transcricao": "transcricao_vad.json",
+ "velocidade": 1.1,
+ "congelar_final": 1.4,
+ "checagem": {
+  "instagram": "ok: gravação original do titular, vertical, 39 s editados (abaixo de 3 min), gancho com a pergunta sobre cenas de trabalho (no bruto ele lia o celular nesse trecho) nos 3 primeiros segundos, sem marca d'água; vídeos de banco só como ilustração",
+  "barreiras": "ok: nenhum acidente explícito, sangue ou ferimento; b-roll só de trabalho, médico e teclado; nenhum dado de cliente; chamada com motivo real (mandar para quem se acidentou)",
+  "publico": "ok: pergunta do povo ('a empresa é obrigada a emitir a CAT?'), resposta prática (prazo, quem pode emitir, o que fazer se ela se recusar), dá vontade de mandar para colega acidentado",
+  "juridico": "conferido no art. 22 da Lei 8.213/91 (prazo até o 1º dia útil seguinte; morte: imediato; multa; § 2º: na falta da empresa podem emitir o acidentado, dependentes, sindicato, médico ou autoridade pública). Cortados do vídeo: 'no caso de morte um familiar pode fazer' (dava a entender que familiar só pode em caso de morte; ele mesmo corrige depois) e 'não descarte fazer um boletim de ocorrência' (a falta de CAT é infração com multa, não crime; trecho arriscado)"
+ },
+ "cortes": [
+  [
+   41.46,
+   45.46
+  ],
+  [
+   46.02,
+   48.24
+  ],
+  [
+   48.52,
+   57.5
+  ],
+  [
+   71.44,
+   78.2
+  ],
+  [
+   135.56,
+   143.48
+  ],
+  [
+   157.46,
+   160.34
+  ],
+  [
+   182.17,
+   184.14
+  ],
+  [
+   188.6,
+   196.32
+  ]
+ ],
+ "zooms": [
+  {
+   "z0": 1.0,
+   "z1": 1.1
+  },
+  {
+   "z0": 1.14,
+   "z1": 1.16
+  },
+  {
+   "z0": 1.0,
+   "z1": 1.03
+  },
+  {
+   "z0": 1.14,
+   "z1": 1.16
+  },
+  {
+   "z0": 1.0,
+   "z1": 1.02
+  },
+  {
+   "z0": 1.16,
+   "z1": 1.18
+  },
+  {
+   "z0": 1.06,
+   "z1": 1.16
+  },
+  {
+   "z0": 1.0,
+   "z1": 1.06
+  }
+ ],
+ "punch": [
+  47.55,
+  50.33,
+  77.68,
+  159.98,
+  190.14
+ ],
+ "palavras_chave": [
+  "obrigada",
+  "penalizada",
+  "lei",
+  "favor",
+  "acidentado",
+  "útil",
+  "morte",
+  "imediato",
+  "sindicato",
+  "médico",
+  "familiar",
+  "você,",
+  "grave",
+  "prejudicar",
+  "beneficiar",
+  "frágil",
+  "situação",
+  "CAT",
+  "CAT?",
+  "CAT.",
+  "CAT,"
+ ],
+ "correcoes": {
+  "Cátia": "CAT"
+ },
+ "eventos": [
+  {
+   "tipo": "pill",
+   "t": 41.46,
+   "fim": 45.46,
+   "texto": "SOFREU ACIDENTE NO TRABALHO?",
+   "emoji": "🦺"
+  },
+  {
+   "tipo": "gancho",
+   "t": 41.5,
+   "fim": 45.46,
+   "linhas": [
+    "A EMPRESA É",
+    "OBRIGADA A",
+    "EMITIR A CAT?"
+   ],
+   "emoji": "📄"
+  },
+  {
+   "tipo": "broll",
+   "t": 41.46,
+   "fim": 43.5,
+   "clip": "soldador_faiscas",
+   "inicio": 0.5
+  },
+  {
+   "tipo": "broll",
+   "t": 43.5,
+   "fim": 45.46,
+   "clip": "armazem_caixa_pesada",
+   "inicio": 0.5
+  },
+  {
+   "tipo": "pill",
+   "t": 46.02,
+   "fim": 49.4,
+   "texto": "FICA ATÉ O FIM: E SE ELA NÃO EMITIR?",
+   "emoji": "👇"
+  },
+  {
+   "tipo": "texto",
+   "t": 47.55,
+   "fim": 49.9,
+   "texto": "É OBRIGADA",
+   "emoji": "✅"
+  },
+  {
+   "tipo": "texto",
+   "t": 50.33,
+   "fim": 52.6,
+   "texto": "PODE LEVAR MULTA",
+   "emoji": "💸"
+  },
+  {
+   "tipo": "lei",
+   "t": 50.33,
+   "fim": 54.6,
+   "texto": "Lei 8.213/91, art. 22"
+  },
+  {
+   "tipo": "texto",
+   "t": 54.81,
+   "fim": 56.3,
+   "texto": "NÃO É FAVOR",
+   "emoji": "❌",
+   "cor": "vermelho"
+  },
+  {
+   "tipo": "broll",
+   "t": 56.3,
+   "fim": 57.5,
+   "clip": "obra_peao_abaixado",
+   "inicio": 1.0
+  },
+  {
+   "tipo": "texto",
+   "t": 73.76,
+   "fim": 76.5,
+   "texto": "ATÉ 1 DIA ÚTIL",
+   "emoji": "📅"
+  },
+  {
+   "tipo": "broll",
+   "t": 74.2,
+   "fim": 75.7,
+   "clip": "obra_escoras_peao",
+   "inicio": 2.0
+  },
+  {
+   "tipo": "texto",
+   "t": 76.58,
+   "fim": 78.2,
+   "texto": "MORTE: IMEDIATO",
+   "emoji": "⚠️",
+   "cor": "vermelho"
+  },
+  {
+   "tipo": "lei",
+   "t": 71.6,
+   "fim": 78.2,
+   "texto": "Lei 8.213/91, art. 22"
+  },
+  {
+   "tipo": "checklist",
+   "t": 135.56,
+   "fim": 143.48,
+   "titulo": "SE A EMPRESA NÃO EMITIR:",
+   "itens": [
+    {
+     "t": 137.82,
+     "texto": "Sindicato",
+     "emoji": "🏛"
+    },
+    {
+     "t": 139.04,
+     "texto": "Médico",
+     "emoji": "🩺"
+    },
+    {
+     "t": 140.84,
+     "texto": "Familiar",
+     "emoji": "👪"
+    },
+    {
+     "t": 141.6,
+     "texto": "Você mesmo",
+     "emoji": "🙋"
+    }
+   ]
+  },
+  {
+   "tipo": "broll",
+   "t": 139.0,
+   "fim": 140.4,
+   "clip": "medico_consulta",
+   "inicio": 1.0
+  },
+  {
+   "tipo": "lei",
+   "t": 141.6,
+   "fim": 143.48,
+   "texto": "Lei 8.213/91, art. 22, § 2º"
+  },
+  {
+   "tipo": "pill",
+   "t": 157.46,
+   "fim": 160.34,
+   "texto": "E SE ELA SE RECUSAR?",
+   "emoji": "🚫"
+  },
+  {
+   "tipo": "broll",
+   "t": 157.5,
+   "fim": 158.95,
+   "clip": "digitando_teclado_maos",
+   "inicio": 0.5
+  },
+  {
+   "tipo": "texto",
+   "t": 159.42,
+   "fim": 160.34,
+   "texto": "FALHA GRAVE",
+   "emoji": "⚠️",
+   "cor": "vermelho"
+  },
+  {
+   "tipo": "riser",
+   "t": 182.17
+  },
+  {
+   "tipo": "virada",
+   "t": 182.55,
+   "fim": 184.14,
+   "linhas": [
+    "NÃO TE",
+    "PREJUDICA"
+   ],
+   "emoji": "✅"
+  },
+  {
+   "tipo": "texto",
+   "t": 190.14,
+   "fim": 192.2,
+   "texto": "PODE ATÉ TE AJUDAR",
+   "emoji": "⚖️"
+  },
+  {
+   "tipo": "broll",
+   "t": 190.9,
+   "fim": 192.4,
+   "clip": "homem_cabeca_nas_maos",
+   "inicio": 1.0
+  },
+  {
+   "tipo": "cta",
+   "t": 192.7,
+   "fim": 999
+  }
+ ],
+ "capa": {
+  "t": 47.0,
+  "linhas": [
+   "A EMPRESA É",
+   "OBRIGADA A",
+   "EMITIR A CAT?"
+  ],
+  "pill": "ACIDENTE DE TRABALHO"
+ },
+ "clipes_usados": [
+  "soldador_faiscas",
+  "armazem_caixa_pesada",
+  "obra_peao_abaixado",
+  "obra_escoras_peao",
+  "medico_consulta",
+  "digitando_teclado_maos",
+  "homem_cabeca_nas_maos"
+ ]
+}
