@@ -51,4 +51,4 @@ Para ampliar o banco: `python3 ferramentas/reels/baixar_clip.py <link do Pexels>
 (baixa, reduz para 720x1280/30 fps sem áudio e acrescenta a linha nesta tabela). Exige acesso a www.pexels.com e videos.pexels.com;
 sem isso, baixe pelo navegador do app desktop e reduza com
 ffmpeg -vf "fps=30,scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280" -an -crf 25.
-Regra de uso (14/11/2026): nenhum clipe repetido no mesmo Reels nem usado nos 2 Reels anteriores — ver COMO_FAZER.md, seção 3.1.
+Regra de uso (14/11/2026): nenhum clipe repetido no mesmo Reels; um clipe só volta 90 dias depois do último uso — ver COMO_FAZER.md, seção 3.1.

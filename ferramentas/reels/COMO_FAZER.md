@@ -50,18 +50,20 @@ Crie `reels/<AAAA-MM-DD>/spec.json` seguindo o modelo `reels/2026-11-12/spec.jso
 - Não esqueça `"voz": "dupla"` no topo e `"voz"` em cada cena (ver "Narração").
 
 ## 3.1 Vídeos — sem repetir (pedido do titular, 14/11/2026)
-- **Regra:** nenhum clipe aparece duas vezes no mesmo Reels, e nenhum clipe usado nos **2 Reels anteriores** pode voltar
-  (o fundo desfocado padrão dos cartões não conta). O `reels.py` confere isso sozinho e para com erro se a regra for quebrada.
+- **Regra (atualizada pelo titular em 14/11/2026):** nenhum clipe aparece duas vezes no mesmo Reels, e um clipe só pode voltar
+  **90 dias (cerca de 3 meses) depois do último uso** (o fundo desfocado padrão dos cartões não conta). O `reels.py` confere isso sozinho e para com erro se a regra for quebrada.
 - **Busca antes de cada Reels (obrigatória):**
   1. Liste as cenas que precisam de vídeo (gancho, capa, 3 da montagem; `bg_clip` dos cartões se quiser variar) e o que cada uma deve mostrar,
      de acordo com o tema (moto, trânsito, fábrica, obra, escritório, mãos, ombro, barulho, hospital...).
-  2. Veja no `ferramentas/reels/stock/README.md` o que já existe e ainda não foi usado nos 2 últimos Reels.
+  2. Veja no `ferramentas/reels/stock/README.md` o que já existe e não foi usado nos últimos 90 dias
+     (`grep -o '"clip": "[a-z_]*"' reels/*/spec.json` mostra o histórico).
   3. Para o que faltar (ou se o clipe disponível não combinar bem com o tema), busque no Pexels com WebSearch, termos em inglês:
      `site:pexels.com/video motorcycle traffic vertical`, `site:pexels.com/video factory worker machine`, `... back pain`, `... construction worker`.
      Prefira vídeos verticais, sem marca d'água, sem logotipo de empresa em destaque e sem acidente explícito/sangue.
   4. Baixe e registre cada um: `python3 ferramentas/reels/baixar_clip.py <link do Pexels> <nome_do_clipe> "<o que mostra>" "<bom para>"`.
      Abra com Read o quadro `stock/_conferir_<nome>.jpg`; se não servir, apague o .mp4 e a linha do README. Apague os `_conferir_*.jpg` antes do commit.
-  5. Aproveite e guarde mais 3 a 5 clipes do nicho que ainda faltam no banco, para os próximos Reels. Commit dos clipes novos junto com o Reels.
+  5. Aproveite e guarde mais 5 a 8 clipes do nicho para os próximos Reels: com 2 Reels por semana e a janela de 90 dias,
+     o banco precisa de pelo menos ~150 clipes para nunca faltar. Commit dos clipes novos junto com o Reels.
 - **Se a busca ou o download falharem** (domínio bloqueado nesta sessão): use só clipes do banco, sem repetir dentro do Reels.
   Se não houver clipes inéditos suficientes, gere com `--permitir-repetidos` e acrescente à notificação final
   "(vídeos repetidos: não consegui baixar clipes novos — liberar pexels.com nas configurações)".
