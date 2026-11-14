@@ -5,6 +5,11 @@ description: Use quando o Dr. Jackson Bueno (@jacksonbueno.adv, acidente de trab
 
 # Edição ilustrada dos vídeos do Dr. Jackson Bueno
 
+> **PRIORIDADE Nº 1 (ordem do titular): cada decisão de edição deve aumentar a chance de o Instagram mostrar o vídeo para
+> MAIS PESSOAS.** Em qualquer dúvida entre duas opções (corte, gancho, imagem, som, duração, capa, legenda), escolha a que
+> mais favorece o alcance: retenção nos primeiros 3 s, tempo assistido até o fim, envios por mensagem, salvamentos,
+> comentários e novos seguidores — sem nada que faça o Instagram barrar ou deixar de recomendar o vídeo.
+
 Objetivo de todo vídeo: **a pessoa se reconhecer nos primeiros 2 segundos, assistir até o fim, mandar para alguém e seguir o perfil**,
 e depois ir ao site jacksonbueno.adv.br. A edição serve à mensagem: ágil, mas limpa e confiável (é um advogado).
 Português do Brasil, linguagem do povo. Toda afirmação jurídica precisa ser verdadeira (confirme em fonte primária).
