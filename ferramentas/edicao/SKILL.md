@@ -9,6 +9,42 @@ Objetivo de todo vídeo: **a pessoa se reconhecer nos primeiros 2 segundos, assi
 e depois ir ao site jacksonbueno.adv.br. A edição serve à mensagem: ágil, mas limpa e confiável (é um advogado).
 Português do Brasil, linguagem do povo. Toda afirmação jurídica precisa ser verdadeira (confirme em fonte primária).
 
+## Checagem prévia — ANTES DE TUDO (pedido do titular)
+Antes de planejar qualquer corte, verifique o vídeo e o plano contra três filtros e anote o resultado em `plano.json` ("checagem").
+Se algo falhar, corrija na edição (cobrir com b-roll, desfocar, cortar o trecho) ou avise o titular e sugira regravar.
+**Não verifique normas da OAB**: o titular faz essa revisão e pede mudança se precisar. A verdade jurídica continua obrigatória.
+
+**A) O que o Instagram vê com bons olhos e recomenda** (Diretrizes de Recomendação / Instagram Creators):
+- Conteúdo **original**: gravado por ele, com a narração e a opinião dele. Vídeos de banco só como ilustração dentro dessa edição
+  autoral (isso é transformação, não repost). Nunca reaproveitar vídeo de outro perfil.
+- Vertical 9:16, alta resolução, sem bordas pretas; texto que **não cubra a maior parte da tela**.
+- **Até 3 minutos** (abaixo disso o Instagram não recomenda); ideal 30–90 s.
+- **Prender nos 3 primeiros segundos** e segurar até o fim.
+- **Sem marca d'água** de nenhum app (CapCut, TikTok etc.), sem imagem borrada ou de baixa qualidade.
+- Palavras-chave e hashtags **na legenda**, não nos comentários (é o que conta para a busca do Instagram).
+
+**B) O que o Instagram barra ou deixa de recomendar a quem não segue** (o post só chega aos seguidores; repetir pode deixar a
+conta inteira fora das recomendações por um tempo):
+- Violência e cenas de briga; **acidente explícito, sangue, ferimento exposto, amputação à mostra**. No nosso nicho, mostre a
+  consequência (gesso, curativo, muleta, tipoia, exame), nunca o ferimento. Se aparecer no vídeo bruto, cubra ou desfoque.
+- Conteúdo sexualmente sugestivo (atenção ao b-roll: roupas transparentes, poses).
+- Produtos regulamentados: cigarro, vape, bebida em destaque — evite no b-roll.
+- Conteúdo não original ou repetido (o mesmo vídeo postado de novo, repost de terceiros, só mudar velocidade ou pôr marca).
+- Qualquer coisa contra as Diretrizes da Comunidade (o post é removido e a conta perde recomendações): afirmações falsas ou
+  enganosas, ataque a pessoas, exposição de dados pessoais (nunca mostrar documento, rosto ou nome de cliente real).
+- Por cautela: nada de pedido vazio de engajamento ("curte se concorda", "comenta SIM"). Peça comentário com motivo real
+  ("comenta sua profissão", "qual foi a desculpa da empresa?").
+
+**C) O que as pessoas querem ver** (confira também `dados/desempenho.md` e as dúvidas dos comentários):
+- **Se reconhecer em 2 segundos**: o sintoma, a profissão ou a situação delas ("motoboy", "dor no punho", "encostado no INSS").
+- **Resposta prática**: "tenho direito?", "o que eu faço amanhã?" — não aula de direito.
+- **Gente de verdade**: o rosto e a voz do Dr. Jackson, tom de conversa, sem juridiquês.
+- **Curto e direto**, com algo que valha **mandar para alguém** (colega de serviço, parente afastado).
+- **Situações comuns contadas como história** ("o cara caiu da moto indo pro serviço e a empresa disse que não era com ela"),
+  sem identificar clientes reais.
+
+Resultado em `plano.json`: `"checagem": {"instagram": "ok|ajustes: ...", "barreiras": "ok|ajustes: ...", "publico": "ok|ajustes: ..."}`.
+
 ## 0. Antes de começar
 - Repositório `jacksonbuenoadv-gif/instagram-midia` (clone/pull). Leia `VISIBILIDADE.md` (regra universal: aparecer nas buscas do
   Google, das IAs e das redes) e, se existir, `dados/desempenho.md` (o que está funcionando).
