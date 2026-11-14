@@ -99,6 +99,23 @@ Cada palavra-chave ganha um elemento no exato momento em que é dita (pelo tempo
 - Nunca cubra o rosto dele com texto. Margem lateral de 150 px. Zona segura do Instagram: nada importante nos 220 px de cima nem
   nos 420 px de baixo (botões e legenda do app).
 
+## 4.1 Retoque do rosto do Dr. Jackson (pedido do titular) — sutil e natural
+Em todos os quadros em que ele aparece (vídeo e capa), aplique um retoque leve para ele ficar bonito e descansado,
+**sem cara de filtro**: quem o conhece pessoalmente deve reconhecê-lo na hora.
+- **Marcas de idade e pele**: suavizar rugas finas e linhas de expressão (testa, entre as sobrancelhas, ao redor dos olhos e da boca)
+  com suavização seletiva só na pele (separação de frequências ou filtro bilateral dentro da máscara do rosto), mantendo a textura
+  dos poros, a barba, as sobrancelhas, os olhos, os dentes e o contorno nítidos. Uniformizar manchas e brilho de oleosidade.
+- **Olheiras**: clarear e neutralizar a cor escura sob os olhos (redução de 30–50% do escurecimento), sem deixar a área cinza ou branca.
+- **Rosto**: afinar levemente bochechas, papada e mandíbula (deformação suave de 2–4%, no máximo) para tirar a aparência de rosto
+  inchado/gordo, sem distorcer o fundo, os óculos, a gola ou as mãos.
+- **Luz e cor**: realce suave de luz no rosto, tom de pele natural e levemente quente, um pouco mais de brilho nos olhos.
+- **Estabilidade**: o retoque tem de acompanhar o rosto quadro a quadro, sem tremer, piscar ou "escorregar" (detecção de pontos do
+  rosto, por exemplo MediaPipe Face Mesh, com suavização temporal dos pontos). Se a detecção falhar num trecho, aplique só o ajuste
+  de luz e cor ali, nunca uma deformação mal posicionada.
+- **Conferência**: gere antes/depois lado a lado de 3 quadros (perto, de lado, sorrindo) e confira com Read. Se parecer artificial,
+  plastificado ou outra pessoa, reduza a intensidade. Na dúvida, menos é mais.
+- Aplica-se só ao Dr. Jackson. Não altere o rosto de outras pessoas que apareçam.
+
 ## 5. Legendas
 - Legenda animada sempre (muita gente assiste sem som): 2–4 palavras por vez, fonte Montserrat 800, 54 px, branca com contorno/sombra,
   **palavra-chave em âmbar** no momento em que é dita. Posição: terço inferior, acima da zona segura, sem cobrir a boca.
@@ -148,6 +165,6 @@ direto pela pergunta; frases curtas; gravar o gancho 3 vezes de jeitos diferente
 
 ## Implementação (`ferramentas/edicao/editar.py`)
 Python + ffmpeg + faster-whisper + Pillow, no mesmo estilo do `reels.py`: (1) transcrever com tempos por palavra; (2) montar a lista
-de trechos mantidos (cortes); (3) para cada quadro, compor: vídeo do titular com zoom do plano → b-roll/janela → elementos gráficos
+de trechos mantidos (cortes); (3) para cada quadro, compor: vídeo do titular com retoque do rosto (seção 4.1) e zoom do plano → b-roll/janela → elementos gráficos
 → legenda; (4) áudio: voz tratada + trilha com ducking + efeitos nos tempos dos eventos; (5) `--preview` gera só quadros de conferência.
 Entrada: `plano.json` com `cortes`, `zooms`, `eventos` [{tempo, tipo: texto|icone|lei|checklist|broll, ...}], `capa` {tempo, texto}.
