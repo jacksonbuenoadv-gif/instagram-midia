@@ -43,6 +43,8 @@ Tipos de cena (kind) e campos:
   cta        photo, question, site, sub, button, button_emoji, key_site, key_button   (foto do titular + site)
 Clipes de banco: nomes de arquivo em ferramentas/reels/stock/ (sem .mp4); ver stock/README.md.
 Campo opcional em clip: "clip_start" (segundos) para começar mais adiante no vídeo.
+Regra dos clipes: nenhum clipe repetido no Reels nem usado nos 2 Reels anteriores (o script para com erro;
+--permitir-repetidos só quando não deu para baixar clipes novos). Clipes novos: ferramentas/reels/baixar_clip.py.
 """
 import os, sys, json, math, random, subprocess, shutil, wave, re
 
@@ -594,10 +596,35 @@ def make_story(capa_path, out_path, tema):
     d.text((W // 2, 1790), HANDLE, font=M(900, 56), fill=AMBER, anchor="mt")
     base.save(out_path, quality=92)
 
+# ---------------- regra dos clipes (pedido do titular, 14/11/2026) ----------------
+def _clipes(beats):
+    return ([b["clip"] for b in beats if b.get("clip")] + [sg["clip"] for b in beats for sg in b.get("segments", []) if sg.get("clip")]
+            + [b["bg_clip"] for b in beats if b.get("bg_clip")])
+def checar_clipes(spec_path, beats):
+    """Nenhum clipe repetido no mesmo Reels e nenhum clipe usado nos 2 Reels anteriores.
+    O fundo desfocado padrão dos cartões não conta. --permitir-repetidos só quando não deu para buscar clipes novos."""
+    usados = _clipes(beats); erros = []
+    faltam = sorted({c for c in usados if not os.path.exists(os.path.join(STOCK, c + ".mp4"))})
+    if faltam: sys.exit("clipes inexistentes no banco: " + ", ".join(faltam))
+    rep = sorted({c for c in usados if usados.count(c) > 1})
+    if rep: erros.append("repetidos neste Reels: " + ", ".join(rep))
+    pasta = os.path.dirname(os.path.abspath(spec_path)); base = os.path.dirname(pasta); hoje = os.path.basename(pasta)
+    ant = sorted(d for d in os.listdir(base) if re.fullmatch(r"\d{4}-\d{2}-\d{2}", d) and d < hoje
+                 and os.path.exists(os.path.join(base, d, "spec.json")))[-2:]
+    for d in ant:
+        velhos = set(_clipes(json.load(open(os.path.join(base, d, "spec.json")))["beats"]))
+        comuns = sorted(velhos & set(usados))
+        if comuns: erros.append(f"já usados no Reels de {d}: " + ", ".join(comuns))
+    if erros:
+        msg = "REGRA DOS CLIPES: " + " | ".join(erros)
+        if "--permitir-repetidos" in sys.argv: print("AVISO " + msg, flush=True)
+        else: sys.exit(msg + "\nBusque clipes novos (ferramentas/reels/baixar_clip.py) ou, se a busca for impossível, use --permitir-repetidos e avise o titular.")
+
 # ---------------- principal ----------------
 def main():
     spec_path, outdir = sys.argv[1], sys.argv[2]; preview_only = "--preview" in sys.argv
     spec = json.load(open(spec_path)); beats = spec["beats"]
+    checar_clipes(spec_path, beats)
     os.makedirs(outdir, exist_ok=True); wd = os.path.join(WORK, "tmp"); shutil.rmtree(wd, ignore_errors=True); os.makedirs(wd)
     acc = 0.0
     for i, b in enumerate(beats):

@@ -45,9 +45,26 @@ Crie `reels/<AAAA-MM-DD>/spec.json` seguindo o modelo `reels/2026-11-12/spec.jso
   6. `list`: direitos (B91, 12 meses de estabilidade, FGTS, indenização, auxílio-acidente...).
   7. `check`: o que fazer agora (médico/exames, CAT, guardar provas...).
   8. `cta`: "Quer entender o seu caso? Acesse jacksonbueno.adv.br" + "Envie para <quem precisa ver>".
-- Clipes: escolha em `ferramentas/reels/stock/README.md` o que combina com cada cena. Se faltar um clipe ideal, use o mais próximo (ex.: `dor_homem_careta` serve para quase todo gancho de dor).
+- Clipes: veja a seção "Vídeos" logo abaixo. Faça a busca de clipes ANTES de escrever o spec.
 - `key` = palavra do texto narrado no momento em que a animação deve aparecer.
 - Não esqueça `"voz": "dupla"` no topo e `"voz"` em cada cena (ver "Narração").
+
+## 3.1 Vídeos — sem repetir (pedido do titular, 14/11/2026)
+- **Regra:** nenhum clipe aparece duas vezes no mesmo Reels, e nenhum clipe usado nos **2 Reels anteriores** pode voltar
+  (o fundo desfocado padrão dos cartões não conta). O `reels.py` confere isso sozinho e para com erro se a regra for quebrada.
+- **Busca antes de cada Reels (obrigatória):**
+  1. Liste as cenas que precisam de vídeo (gancho, capa, 3 da montagem; `bg_clip` dos cartões se quiser variar) e o que cada uma deve mostrar,
+     de acordo com o tema (moto, trânsito, fábrica, obra, escritório, mãos, ombro, barulho, hospital...).
+  2. Veja no `ferramentas/reels/stock/README.md` o que já existe e ainda não foi usado nos 2 últimos Reels.
+  3. Para o que faltar (ou se o clipe disponível não combinar bem com o tema), busque no Pexels com WebSearch, termos em inglês:
+     `site:pexels.com/video motorcycle traffic vertical`, `site:pexels.com/video factory worker machine`, `... back pain`, `... construction worker`.
+     Prefira vídeos verticais, sem marca d'água, sem logotipo de empresa em destaque e sem acidente explícito/sangue.
+  4. Baixe e registre cada um: `python3 ferramentas/reels/baixar_clip.py <link do Pexels> <nome_do_clipe> "<o que mostra>" "<bom para>"`.
+     Abra com Read o quadro `stock/_conferir_<nome>.jpg`; se não servir, apague o .mp4 e a linha do README. Apague os `_conferir_*.jpg` antes do commit.
+  5. Aproveite e guarde mais 3 a 5 clipes do nicho que ainda faltam no banco, para os próximos Reels. Commit dos clipes novos junto com o Reels.
+- **Se a busca ou o download falharem** (domínio bloqueado nesta sessão): use só clipes do banco, sem repetir dentro do Reels.
+  Se não houver clipes inéditos suficientes, gere com `--permitir-repetidos` e acrescente à notificação final
+  "(vídeos repetidos: não consegui baixar clipes novos — liberar pexels.com nas configurações)".
 
 ## 4. Legenda (copy)
 Curta, fácil de ler, com ícones e hashtags. Modelo:

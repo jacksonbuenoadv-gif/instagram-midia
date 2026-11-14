@@ -16,6 +16,8 @@ Reduzidos para 720x1280, 30 fps, sem áudio. Use o nome do arquivo sem `.mp4` no
 | caminhao_vermelho_rodovia | caminhão vermelho em rodovia urbana | estrada, trânsito, acidente de trajeto | 36456221 |
 | caminhao_branco_manobra | cavalo mecânico branco manobrando | pátio, carga | 33870727 |
 
-Para ampliar o banco (em sessão com o app desktop aberto): buscar no Pexels pelo navegador, baixar a versão 720x1280,
-reduzir com o mesmo comando (ffmpeg -vf "fps=30,scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280" -an -crf 25)
-e acrescentar uma linha nesta tabela. Faltam hoje: ambiente de fábrica/máquinas, obra/queda, moto, fone/ruído, mãos com formigamento.
+Para ampliar o banco: `python3 ferramentas/reels/baixar_clip.py <link do Pexels> <nome> "<o que mostra>" "<bom para>"`
+(baixa, reduz para 720x1280/30 fps sem áudio e acrescenta a linha nesta tabela). Exige acesso a www.pexels.com e videos.pexels.com;
+sem isso, baixe pelo navegador do app desktop e reduza com
+ffmpeg -vf "fps=30,scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280" -an -crf 25.
+Regra de uso (14/11/2026): nenhum clipe repetido no mesmo Reels nem usado nos 2 Reels anteriores — ver COMO_FAZER.md, seção 3.1. Faltam hoje: ambiente de fábrica/máquinas, obra/queda, moto, fone/ruído, mãos com formigamento.
