@@ -81,6 +81,8 @@ Estrutura que deve sair do vídeo (reordene trechos se ajudar, sem mudar o senti
   impacto; **push-in lento** (100→108% ao longo do trecho) no gancho e na virada. Sempre centralizado no rosto; nunca cortar olhos/boca.
 - B-roll ocupa a tela toda por 1–2,5 s ou aparece em janela (picture-in-picture) no terço superior, com a voz dele continuando.
 - Transições só por corte, zoom ou "whip" rápido. Nada de efeitos de template (estrela, cubo, glitch exagerado).
+- **Se a fala estiver lenta, acelere** o vídeo inteiro ou os trechos lentos (1,05x a 1,20x; áudio com `atempo`, sem mudar o tom da voz),
+  até soar natural e dinâmico. Teste ouvindo: a voz não pode ficar "de esquilo" nem atropelada.
 
 ## 4. Ilustrações (o que aparece quando ele fala)
 Cada palavra-chave ganha um elemento no exato momento em que é dita (pelo tempo da transcrição):
@@ -104,8 +106,11 @@ Cada palavra-chave ganha um elemento no exato momento em que é dita (pelo tempo
 
 ## 6. Som
 - Voz: limpe ruído leve (afftdn), corte graves < 80 Hz, normalize para cerca de −14 LUFS. A voz manda: tudo o resto fica embaixo dela.
-- Trilha instrumental original e discreta (gere com `ferramentas/trilha.py` ou o `make_music` do reels.py), −26 a −30 dB abaixo
-  da voz, com ducking. Nunca use música comercial com direitos.
+- **Trilha de fundo sempre que ajudar a prender a atenção**, escolhida para combinar com a proposta do vídeo: tensa/grave para
+  alerta ("cuidado, a empresa pode..."), emotiva para histórias de sofrimento, animada/firme para "você tem direito" e para o
+  passo a passo. Instrumental original (gere com `ferramentas/trilha.py` ou o `make_music` do reels.py), −26 a −30 dB abaixo
+  da voz, com ducking, subindo levemente na virada e no final. Se a trilha atrapalhar a compreensão, tire. Nunca use música
+  comercial com direitos.
 - Efeitos sonoros curtos e baixos, sintetizados (sem banco com direitos): **whoosh** nas entradas de b-roll, **pop** em textos e
   ícones, **ding/clique** no checklist, **riser** de 1 s antes da virada, **impacto grave** no gancho. Máximo de 1 efeito a cada 2 s.
 
@@ -114,11 +119,19 @@ Cada palavra-chave ganha um elemento no exato momento em que é dita (pelo tempo
   grandes com a pergunta do povo ("DOR NAS COSTAS DÁ DIREITO?"). Tudo importante dentro do centro 1080x1440 (o perfil corta em 3:4).
 - Mesma identidade das outras capas (azul-marinho #0A1424, âmbar #FFBA30, Montserrat), para o perfil ficar reconhecível.
 
-## 8. Legenda do post (`legenda.txt`) — seguir `VISIBILIDADE.md`
-Primeira linha = a pergunta com a palavra que as pessoas buscam; resposta direta em 1–2 frases com a base legal; 3–5 linhas com
-ícones; chamada (seguir/enviar/salvar/comentar); "🌐 jacksonbueno.adv.br" e, se houver artigo no blog sobre o tema, "📖 artigo
-completo no blog, link na bio"; assinatura "👨‍⚖️ Dr. Jackson Bueno · Advogado de acidente de trabalho e doença ocupacional ·
-OAB/MG 211.217"; 4–7 hashtags (uma de serviço: #advogadoacidentedetrabalho ou #advogadodoencaocupacional).
+## 8. Legenda do post (`legenda.txt`) — texto persuasivo, sempre entregue junto com o vídeo (seguir também `VISIBILIDADE.md`)
+Estrutura obrigatória, com ícones e frases curtas:
+1. **Gancho** (1ª linha, a que aparece antes do "mais"): a pergunta ou a frase de impacto com a palavra que as pessoas buscam,
+   que faça a pessoa se reconhecer e querer abrir o texto ("🚨 Machucou indo pro serviço e a empresa disse que não é com ela?").
+2. **Desenvolvimento**: resposta direta em 1–2 frases com a base legal; 3–5 linhas com ícones (direitos, sinais, o que fazer);
+   um ponto que surpreende e dá vontade de mandar para alguém.
+3. **CTA impactante**, com urgência e benefício claro, SEMPRE com chamada para o link da bio:
+   "👉 Clique no link da bio e fale comigo antes que o prazo passe" / "👉 Toque no link da bio e descubra se o seu caso dá direito".
+   Somar uma ação de alcance: "📲 Manda pra quem precisa ver" / "📌 Salva pra não perder" / "➕ Segue pra ver a parte 2".
+4. "🌐 jacksonbueno.adv.br" e, se houver artigo no blog sobre o tema, "📖 Artigo completo no link da bio".
+5. Assinatura "👨‍⚖️ Dr. Jackson Bueno · Advogado de acidente de trabalho e doença ocupacional · OAB/MG 211.217".
+6. **Hashtags**: 4–7, em português e específicas, sempre com uma de serviço (#advogadoacidentedetrabalho ou
+   #advogadodoencaocupacional) + as do tema e da profissão (#motoboy, #dornascostas, #inss...).
 
 ## 9. Conferir e entregar
 1. Gere prévias (quadros nos momentos-chave + um trecho de 10 s) e confira com Read: nada cortado, nada sobre o rosto,
