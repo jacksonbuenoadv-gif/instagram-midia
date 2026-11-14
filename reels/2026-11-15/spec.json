@@ -1,7 +1,7 @@
 {
  "tema": "Acidente no caminho do trabalho (trajeto) também é acidente de trabalho",
  "voz": "dupla",
- "legenda": "🏍️ Se acidentou indo ou voltando do trabalho? Isso também é ACIDENTE DE TRABALHO!\n\nA lei conta o caminho de casa pro trabalho e do trabalho pra casa. De moto, carro, ônibus, bicicleta ou a pé (Lei 8.213/91, art. 21, IV, d). 🚦\n\n⚠️ Acontece todo dia:\n🏍️ Queda de moto\n🚗 Batida de carro\n🚶 Atropelamento\n🚌 Queda dentro do ônibus\n\n✅ Vale até se a moto ou o carro forem seus.\n\nSe ficar afastado mais de 15 dias, você pode ter direito a:\n➡️ Benefício acidentário do INSS (B91)\n➡️ 12 meses de estabilidade quando voltar\n➡️ Auxílio-acidente, se ficar sequela que atrapalhe o trabalho\n\n📝 Peça a CAT. Se a empresa não fizer, você mesmo pode registrar.\n\n👉 Toque no link da bio e me conta o seu caso: eu te digo o que fazer.\n📖 Artigo completo sobre acidente de trajeto no link da bio.\n📲 Manda pra quem vai trabalhar de moto.\n\n🌐 jacksonbueno.adv.br\n👨‍⚖️ Dr. Jackson Bueno · Advogado de acidente de trabalho e doença ocupacional · OAB/MG 211.217\n\n#advogadoacidentedetrabalho #acidentedetrabalho #acidentedetrajeto #acidentedemoto #motoboy #inss #direitodotrabalhador",
+ "legenda": "🏍️ Se acidentou indo ou voltando do trabalho? Isso também é ACIDENTE DE TRABALHO!\n\nA lei conta o caminho de casa pro trabalho e do trabalho pra casa. De moto, carro, ônibus, bicicleta ou a pé (Lei 8.213/91, art. 21, IV, d). 🚦\n\n⚠️ Acontece todo dia:\n🏍️ Queda de moto\n🚗 Batida de carro\n🚶 Atropelamento\n🚌 Queda dentro do ônibus\n\n✅ Vale até se a moto ou o carro forem seus.\n\nSe ficar afastado mais de 15 dias, você pode ter direito a:\n➡️ Benefício acidentário do INSS (B91)\n➡️ 12 meses de estabilidade quando voltar\n➡️ Auxílio-acidente, se ficar sequela que atrapalhe o trabalho\n\n📝 Peça a CAT. Se a empresa não fizer, você mesmo pode registrar.\n\n👉 Me chama no WhatsApp: o contato está no link da bio. Me conta o seu caso que eu te digo o que fazer.\n📖 Artigo completo sobre acidente de trajeto no link da bio.\n📲 Manda pra quem vai trabalhar de moto.\n\n🌐 jacksonbueno.adv.br\n👨‍⚖️ Dr. Jackson Bueno · Advogado de acidente de trabalho e doença ocupacional · OAB/MG 211.217\n\n#advogadoacidentedetrabalho #acidentedetrabalho #acidentedetrajeto #acidentedemoto #motoboy #inss #direitodotrabalhador",
  "beats": [
   {
    "kind": "hook",
@@ -35,7 +35,7 @@
      850
     ]
    },
-   "say": "Pode ser acidente de trabalho, sim.",
+   "say": "Pois é: isso pode ser acidente de trabalho, sim.",
    "cap": null
   },
   {
@@ -93,7 +93,7 @@
    "emoji": "🚶",
    "title": "ATROPELAMENTO",
    "sub": "a caminho do ponto de ônibus",
-   "say": "Atropelamento, a caminho do ponto de ônibus."
+   "say": "Ser atropelado, a caminho do ponto de ônibus."
   },
   {
    "kind": "card",
@@ -122,7 +122,7 @@
    "follow2": "ou carro seu.",
    "follow_key": "mesmo",
    "source": "Lei 8.213/91, art. 21, IV, d",
-   "say": "E atenção: pra lei, o caminho também conta como acidente de trabalho. Mesmo se a moto ou o carro forem seus."
+   "say": "E olha só: pra lei, o caminho também conta como acidente de trabalho. Mesmo se a moto ou o carro forem seus."
   },
   {
    "kind": "list",
@@ -146,7 +146,7 @@
      "key": "sequela"
     }
    ],
-   "say": "Se ficar afastado mais de 15 dias, você pode ter direito a benefício acidentário do INSS, 12 meses de estabilidade quando voltar, e auxílio-acidente se ficar sequela."
+   "say": "Se você ficar afastado mais de 15 dias, pode ter direito ao benefício acidentário do INSS, a 12 meses de estabilidade quando voltar e, se ficar sequela, ao auxílio-acidente."
   },
   {
    "kind": "check",
@@ -167,19 +167,19 @@
      "key": "anote"
     }
    ],
-   "say": "Então peça a CAT. Se a empresa não fizer, você mesmo pode registrar. Guarde o boletim de ocorrência e os atestados, e anote o horário e o trajeto."
+   "say": "Então faz assim: peça a CAT. Se a empresa não fizer, você mesmo pode registrar. Guarde o boletim de ocorrência e os atestados, e anote o horário e o trajeto."
   },
   {
    "kind": "cta",
    "voz": "homem",
    "photo": "fotos/jackson-mesa-sorrindo_cta.jpg",
    "question": "Quer entender o seu caso?",
-   "site": "jacksonbueno.adv.br",
+   "site": "WhatsApp: contato na bio",
    "button": "Envie pra quem vai de moto",
    "button_emoji": "🏍️",
-   "key_site": "acesse",
-   "key_button": "mande",
-   "say": "Quer entender o seu caso? Acesse jacksonbueno.adv.br. E mande este vídeo pra quem vai trabalhar de moto.",
+   "key_site": "WhatsApp",
+   "key_button": "manda",
+   "say": "Quer entender o seu caso? Me chama no WhatsApp, o contato tá na bio. E manda este vídeo pra quem vai trabalhar de moto.",
    "cap": null
   }
  ]

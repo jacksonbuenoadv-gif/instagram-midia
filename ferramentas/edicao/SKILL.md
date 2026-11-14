@@ -72,7 +72,7 @@ Estrutura que deve sair do vídeo (reordene trechos se ajudar, sem mudar o senti
 - **Conteúdo (3 pontos no máximo):** um ponto por bloco, cada bloco com uma ilustração.
 - **Virada:** o fato que surpreende e faz compartilhar ("não precisa ser a única causa", "vale até sem CAT").
 - **Chamada final:** UMA ação principal, variando: "Segue pra não perder a parte 2", "Manda pra quem trabalha de moto",
-  "Salva pra mostrar no médico", "Comenta a sua profissão que eu faço um vídeo pra ela". E o site na tela: jacksonbueno.adv.br.
+  "Salva pra mostrar no médico", "Comenta a sua profissão que eu faço um vídeo pra ela". E na tela, no fim: "Me chama no WhatsApp — contato na bio" (pedido do titular: o final chama para o WhatsApp, não para o site).
 
 ## 3. Ritmo, cortes e zoom
 - Corte seco (jump cut) em todos os silêncios e muletas; deixe 0,08 s de respiro antes da fala para não soar robótico.

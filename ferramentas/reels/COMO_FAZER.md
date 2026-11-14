@@ -17,6 +17,9 @@ Português do Brasil, linguagem simples, sem juridiquês. O titular revisa depoi
 - No spec: `"voz": "dupla"` no topo e, em cada cena, `"voz": "mulher"` ou `"voz": "homem"`, montando um bate-papo:
   a mulher costuma puxar o assunto (gancho, perguntas, situações do dia a dia, "o que fazer") e o homem responde/explica
   (resposta da capa, direitos, encerramento com o site). Evite a mesma voz em mais de 2 cenas seguidas.
+- **Voz humanizada (pedido do titular, 14/11/2026):** escreva as falas como conversa de verdade — frases curtas, "pra", "tá",
+  "olha só", "pois é", "então faz assim", perguntas diretas. O `reels.py` já usa os ajustes que deixam a voz menos robótica
+  (sem mudança de tom, mais expressividade, sem aceleração, voz masculina nova); não volte aos valores antigos.
 - Cada frase é conferida automaticamente por transcrição e refeita se sair errada (ver log "voz ... tentativa").
   Se no log uma palavra importante continuar errada depois das tentativas, troque a palavra por um sinônimo simples e gere de novo.
 - A narração com essas vozes leva ~10 min no total (modelo roda em CPU). A primeira execução instala o modelo (~3 GB).
@@ -46,7 +49,9 @@ Crie `reels/<AAAA-MM-DD>/spec.json` seguindo o modelo `reels/2026-11-12/spec.jso
   5. `statement`: o ponto que surpreende e faz compartilhar ("não precisa ser a única causa", "acidente no caminho também conta", "mesmo sem CAT você pode...").
   6. `list`: direitos (B91, 12 meses de estabilidade, FGTS, indenização, auxílio-acidente...).
   7. `check`: o que fazer agora (médico/exames, CAT, guardar provas...).
-  8. `cta`: "Quer entender o seu caso? Acesse jacksonbueno.adv.br" + "Envie para <quem precisa ver>".
+  8. `cta` (pedido do titular, 14/11/2026): **chamar para o WhatsApp, não para o site**. Fala: "Quer entender o seu caso? Me chama no
+     WhatsApp, o contato tá na bio. E manda este vídeo pra <quem precisa ver>." Campos: `"site": "WhatsApp: contato na bio"`,
+     `"key_site": "WhatsApp"`, `"key_button": "manda"`, `"button": "Envie pra <quem precisa ver>"`.
 - Clipes: veja a seção "Vídeos" logo abaixo. Faça a busca de clipes ANTES de escrever o spec.
 - `key` = palavra do texto narrado no momento em que a animação deve aparecer.
 - Não esqueça `"voz": "dupla"` no topo e `"voz"` em cada cena (ver "Narração").
@@ -85,7 +90,8 @@ Curta, fácil de ler, com ícones e hashtags. Modelo:
 Você pode ter direito a:
 ➡️ ...
 
-📌 Salve e mande pra quem precisa ver.
+👉 Me chama no WhatsApp: o contato está no link da bio. Me conta o seu caso que eu te digo o que fazer.
+📲 Manda pra quem precisa ver.
 🌐 jacksonbueno.adv.br
 👨‍⚖️ Dr. Jackson Bueno · Advogado de acidente de trabalho e doença ocupacional · OAB/MG 211.217
 

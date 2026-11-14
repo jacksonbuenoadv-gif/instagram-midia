@@ -491,13 +491,14 @@ def tts(text, out, expected=None, voz=None):
         return
     ref = {"mulher": None, "homem": os.path.join(VOZ_DIR, "homem_ref.wav"), "titular": os.environ.get("REELS_VOZ_REF")}[voz]
     if voz == "titular" and not ref: sys.exit("voz 'titular' exige REELS_VOZ_REF")
-    exag = os.environ.get("REELS_VOZ_EXAG", "0.55")
+    exag = os.environ.get("REELS_VOZ_EXAG", "0.7")
     import hashlib, copy
     cache = os.path.join(WORK, "voz_cache"); os.makedirs(cache, exist_ok=True)
-    key = hashlib.sha1((text + "|" + voz + "|" + str(ref) + "|" + exag).encode()).hexdigest()[:16]
+    CFG = float(os.environ.get("REELS_VOZ_CFG", "0.35"))   # cfg menor + exaggeration maior = fala mais expressiva e humana
+    key = hashlib.sha1((text + "|" + voz + "|" + str(ref) + "|" + exag + "|" + str(CFG) + "|v2").encode()).hexdigest()[:16]
     cp = os.path.join(cache, key + ".wav")
     # ajuste de tom para as vozes ficarem bem distintas (preserva o timbre)
-    PITCH = {"mulher": float(os.environ.get("REELS_PITCH_MULHER", "1.18")), "homem": float(os.environ.get("REELS_PITCH_HOMEM", "0.95"))}
+    PITCH = {"mulher": float(os.environ.get("REELS_PITCH_MULHER", "1.0")), "homem": float(os.environ.get("REELS_PITCH_HOMEM", "1.0"))}   # sem mudar o tom: soa menos robótico
     def finish(src):
         pt = PITCH.get(voz)
         if pt and abs(pt - 1) > 0.01: sh(["ffmpeg", "-y", "-loglevel", "error", "-i", src, "-af", f"rubberband=pitch={pt}:formant=preserved", out])
@@ -520,14 +521,14 @@ def tts(text, out, expected=None, voz=None):
     for tent in range(4):   # gera, confere por transcrição e refaz se alguma palavra saiu errada
         if ref is None:
             _cb.conds = copy.deepcopy(_cb_default)
-            w = _cb.generate(text, language_id="pt", exaggeration=float(exag), cfg_weight=0.5)
+            w = _cb.generate(text, language_id="pt", exaggeration=float(exag), cfg_weight=CFG)
         else:
-            w = _cb.generate(text, language_id="pt", audio_prompt_path=ref, exaggeration=float(exag), cfg_weight=0.5)
+            w = _cb.generate(text, language_id="pt", audio_prompt_path=ref, exaggeration=float(exag), cfg_weight=CFG)
         raw = out + f".raw{tent}.wav"; sf.write(raw, w.squeeze(0).cpu().numpy(), _cb.sr)
         fin = out + f".t{tent}.wav"
         sh(["ffmpeg", "-y", "-loglevel", "error", "-i", raw, "-af",
             "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
-            f"atempo={os.environ.get('REELS_VOZ_TEMPO', '1.08')},highpass=f=70", "-ar", "22050", fin])
+            f"atempo={os.environ.get('REELS_VOZ_TEMPO', '1.0')},highpass=f=70", "-ar", "22050", fin])
         os.remove(raw)
         sc, got = _check(fin, expected or text)
         print(f"  voz {voz} {os.path.basename(out)} tentativa {tent + 1}: {sc:.2f} | {got.strip()}", flush=True)
