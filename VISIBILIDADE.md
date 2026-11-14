@@ -38,7 +38,7 @@ Dados iguais em todo lugar fazem o Google e as IAs reconhecerem que é a mesma p
 ## Ao planejar pautas
 - Prefira temas que as pessoas pesquisam e que levam a contratar o serviço (pergunta + "tenho direito?").
 - Cubra aos poucos todas as buscas do nicho (sintomas, profissões, tipos de acidente, benefícios), sem repetir.
-- O site **não deve ser alterado** pelas tarefas; quando um tema render muito, registre em `dados/sugestoes_visibilidade.md`
+- O site **não deve ser alterado** pelas tarefas, e o titular **não quer páginas novas no site** (pedido de 14/11/2026; já há muitas); quando um tema render muito, registre em `dados/sugestoes_visibilidade.md`
   como sugestão de artigo para o titular.
 
 ## Sugestões ao titular (fora do alcance das tarefas automáticas)
