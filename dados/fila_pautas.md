@@ -26,4 +26,4 @@ A rotina diária segue esta fila antes da programação normal. Depois de public
 - Estilos: classic, photo, split, gold, light (ver cabeçalho de ferramentas/gerar.py).
 - Nunca repita o estilo do dia anterior; em cada 5 dias, use pelo menos 3 estilos diferentes.
 - Use foto do titular em cerca de 3 de cada 5 capas, alternando as fotos e os filtros (nenhum, pb, quente, duotone).
-- Histórico de estilos: 10/11 classic · 11/11 classic · 12/11 split (bracos-cruzados_vertical) · 13/11 gold (sem foto) · 16/11 photo (retrato-terno, quente) [já definido].
+- Histórico de estilos: 10/11 classic · 11/11 classic · 12/11 split (bracos-cruzados_vertical) · 13/11 gold (sem foto) · 14/11 split (sala-reuniao_vertical, duotone) · 16/11 photo (retrato-terno, quente) [já definido].
