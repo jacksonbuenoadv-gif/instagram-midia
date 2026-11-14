@@ -1,5 +1,7 @@
 # Reels semanal do @jacksonbueno.adv — passo a passo
 
+> **Regra universal do titular (14/11/2026):** antes de produzir qualquer coisa, leia e aplique `VISIBILIDADE.md` (na raiz do repositório): cada peça deve ajudar o Dr. Jackson Bueno a aparecer nas buscas do Google, das IAs e das redes pelos serviços dele.
+
 Um Reels por semana, publicado às **12h (horário de Brasília)**, e um **story às 18h** do mesmo dia avisando do Reels.
 Português do Brasil, linguagem simples, sem juridiquês. O titular revisa depois e avisa se algo precisar mudar.
 
@@ -85,8 +87,9 @@ Você pode ter direito a:
 
 📌 Salve e mande pra quem precisa ver.
 🌐 jacksonbueno.adv.br
+👨‍⚖️ Dr. Jackson Bueno · Advogado de acidente de trabalho e doença ocupacional · OAB/MG 211.217
 
-#acidentedetrabalho #doencaocupacional #<5 a 7 hashtags específicas em português>
+#acidentedetrabalho #doencaocupacional #advogadoacidentedetrabalho #<3 a 5 hashtags específicas em português>
 ```
 Coloque a legenda no campo `"legenda"` do spec.
 

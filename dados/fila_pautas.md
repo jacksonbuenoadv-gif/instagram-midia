@@ -1,5 +1,7 @@
 # Fila de pautas (definida pelo titular em 11/11/2026)
 
+> **Regra universal do titular (14/11/2026):** antes de produzir qualquer coisa, leia e aplique `VISIBILIDADE.md` (na raiz do repositório): cada peça deve ajudar o Dr. Jackson Bueno a aparecer nas buscas do Google, das IAs e das redes pelos serviços dele.
+
 A rotina diária segue esta fila antes da programação normal. Depois de publicar, marque a linha como feita.
 
 | data | pauta | status |

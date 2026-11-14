@@ -1,5 +1,7 @@
 # TikTok @jacksonbueno.adv – republicação do Instagram
 
+> **Regra universal do titular (14/11/2026):** antes de produzir qualquer coisa, leia e aplique `VISIBILIDADE.md` (na raiz do repositório): cada peça deve ajudar o Dr. Jackson Bueno a aparecer nas buscas do Google, das IAs e das redes pelos serviços dele.
+
 Publicado em 13/11/2026: Reels do caminhoneiro (reels/2026-11-12).
 
 Agendados (12h e 19h, horário de Brasília):

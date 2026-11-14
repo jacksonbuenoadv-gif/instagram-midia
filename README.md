@@ -1,5 +1,7 @@
 # instagram-midia
 
+> **Regra universal do titular (14/11/2026):** antes de produzir qualquer coisa, leia e aplique `VISIBILIDADE.md` (na raiz do repositório): cada peça deve ajudar o Dr. Jackson Bueno a aparecer nas buscas do Google, das IAs e das redes pelos serviços dele.
+
 Hospedagem pública das imagens do Instagram @jacksonbueno.adv (Jackson Bueno Advogados, OAB/MG 211.217).
 
 - `posts/AAAA-MM-DD/` – slides do carrossel do dia (`slide1.jpg`…), `story.jpg`, `legenda.txt` e `spec.json`.
