@@ -10,7 +10,11 @@ Toda afirmação continua tendo de ser verdadeira. Esta regra não tira nenhuma 
 - Nome: **Dr. Jackson Bueno** · escritório **Jackson Bueno Advogados** · **OAB/MG 211.217**
 - Serviço: **advogado de acidente de trabalho e doença ocupacional** (advocacia para o trabalhador; INSS acidentário, CAT,
   estabilidade, auxílio-acidente, indenização)
-- Onde atende: Minas Gerais e todo o Brasil · Site: **jacksonbueno.adv.br** · Instagram/TikTok: **@jacksonbueno.adv**
+- Onde atende: **presencial em Belo Horizonte (Rua dos Guajajaras, 40 — Centro) e interior de MG; online para todo o Brasil**
+- Telefone/WhatsApp: **(31) 99979-2020** · E-mail: contato@jacksonbueno.adv.br
+- Site: **jacksonbueno.adv.br** (fonte oficial: `src/lib/site-config.ts` do projeto no Lovable) · Instagram/TikTok: **@jacksonbueno.adv**
+- O site tem mais de 70 artigos no blog: quando o tema da peça tiver artigo, cite-o ("artigo completo no blog, link na bio")
+  — confira com WebSearch `site:jacksonbueno.adv.br <tema>`.
 Dados iguais em todo lugar fazem o Google e as IAs reconhecerem que é a mesma pessoa e o mesmo serviço.
 
 ## O que cada peça precisa ter
