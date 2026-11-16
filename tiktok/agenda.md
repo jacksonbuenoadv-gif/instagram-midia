@@ -36,3 +36,13 @@ Agendados (12h e 19h, horário de Brasília):
 Todas as 48 publicações do Instagram estão no TikTok (1 publicada + 47 agendadas). Conferido em 13/11 no TikTok Studio: nenhuma sem legenda.
 
 Os códigos são os do Instagram (instagram.com/p/<código>); arquivos e legendas em `tiktok/instagram-antigo/`.
+
+Agendados em 16/11/2026 (conteúdos novos do Instagram, horário de Brasília). Conferido no TikTok Studio: todos com legenda.
+
+| Data | Hora | Conteúdo |
+|---|---|---|
+| 17/11 | 08:30 | carrossel posts/2026-11-13 |
+| 17/11 | 17:00 | Reels reels/2026-11-15 |
+| 18/11 | 08:30 | carrossel posts/2026-11-14 |
+| 19/11 | 08:30 | carrossel posts/2026-11-15 |
+| 20/11 | 08:30 | carrossel posts/2026-11-16 |
