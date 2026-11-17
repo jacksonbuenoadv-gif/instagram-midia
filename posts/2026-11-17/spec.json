@@ -1,0 +1,82 @@
+{
+ "oab": "OAB/MG 211.217",
+ "story": true,
+ "formato": "video",
+ "slides": [
+  {
+   "type": "cover",
+   "style": "split",
+   "photo": "fotos/jackson-corpo-inteiro_vertical.jpg",
+   "filter": "pb",
+   "kicker": "INSS · AFASTAMENTO",
+   "title": "B31 ou B91: *qual a diferença?*",
+   "sub": "O código do seu afastamento muda os seus direitos."
+  },
+  {
+   "type": "text",
+   "kicker": "O QUE CADA CÓDIGO SIGNIFICA",
+   "title": "Comum *ou acidentário*",
+   "paragraphs": [
+    "**B31** é o auxílio-doença comum: doença ou acidente **sem ligação** com o trabalho.",
+    "**B91** é o auxílio-doença acidentário: acidente de trabalho, de trajeto ou **doença causada pelo trabalho**."
+   ],
+   "src": "Lei 8.213/91, arts. 19, 20, 21 e 59"
+  },
+  {
+   "type": "cards",
+   "title": "O que *muda na prática*",
+   "cards": [
+    {"code": "B31", "tag": "COMUM", "ok": false, "items": [
+      {"y": false, "text": "Sem estabilidade no emprego"},
+      {"y": false, "text": "Sem depósito do FGTS"},
+      {"y": false, "text": "Em regra, exige 12 contribuições"}
+    ]},
+    {"code": "B91", "tag": "ACIDENTÁRIO", "ok": true, "items": [
+      {"y": true, "text": "12 meses de estabilidade ao voltar"},
+      {"y": true, "text": "FGTS depositado no afastamento"},
+      {"y": true, "text": "Sem carência"}
+    ]}
+   ],
+   "tip": "O valor, em regra, é calculado do mesmo jeito nos dois: 91% do salário de benefício."
+  },
+  {
+   "type": "big",
+   "kicker": "ESTABILIDADE",
+   "big": "12",
+   "big_label": "meses",
+   "paragraphs": [
+    "Com o **B91**, quem volta ao trabalho tem, em regra, garantia de emprego por 12 meses após o fim do benefício.",
+    "Com o **B31**, não há essa garantia, salvo se depois ficar provado que a doença tinha relação com o trabalho."
+   ],
+   "src": "Art. 118 da Lei 8.213/91 e Súmula 378 do TST"
+  },
+  {
+   "type": "list",
+   "kicker": "FOI DO TRABALHO E SAIU B31?",
+   "title": "Dá para *corrigir*",
+   "items": [
+    {"b": "Confira o código", "span": "a espécie (31 ou 91) aparece na carta do INSS e no Meu INSS."},
+    {"b": "Recorra em até 30 dias", "span": "o recurso no INSS pode pedir a mudança para B91."},
+    {"b": "Ou vá à Justiça", "span": "a conversão também pode ser pedida em ação judicial."}
+   ],
+   "src": "Decreto 3.048/99, art. 305, § 1º"
+  },
+  {
+   "type": "checklist",
+   "kicker": "PARA PROVAR A LIGAÇÃO COM O TRABALHO",
+   "title": "Reúna *documentos*",
+   "items": [
+    {"t": "CAT", "small": "se a empresa não emitir, você ou o sindicato podem"},
+    {"t": "Laudos e atestados", "small": "com o CID e a descrição do problema"},
+    {"t": "Registro do acidente", "small": "boletim de ocorrência, fotos, testemunhas"},
+    {"t": "Provas da função", "small": "ASO, PPP e a rotina de trabalho"}
+   ]
+  },
+  {
+   "type": "cta",
+   "title": "O código *faz diferença.*",
+   "text": "Ficou com dúvida sobre o seu afastamento? Envie sua pergunta pelo **link na bio** e receba uma orientação.",
+   "button": "Salve e envie a quem precisa"
+  }
+ ]
+}
