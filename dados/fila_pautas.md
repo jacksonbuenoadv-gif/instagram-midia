@@ -11,6 +11,7 @@ A rotina diária segue esta fila antes da programação normal. Depois de public
 | 2026-11-14 | Programação normal: ACIDENTE DE TRABALHO (13/11 foi doença ocupacional) → feito: "Me machuquei no trabalho: quem paga?" | feito |
 | 2026-11-15 | CAMINHONEIROS: "Acidente na estrada é acidente de trabalho? Quais os direitos do motorista?" (NÃO falar de doenças: o post de 16/11 já trata disso). Capa: NÃO usar o estilo "photo" (16/11 usa photo). → feito: "Acidente na estrada é acidente de trabalho?" | feito |
 | 2026-11-16 | CAMINHONEIROS: "As doenças que mais atingem caminhoneiros" (pedido do titular) → feito: publicado pela reserva das 8h40 | feito |
+| 2026-11-17 | Programação normal: ACIDENTE DE TRABALHO (16/11 foi doença) → feito: "B31 ou B91: qual a diferença?" (vídeo com trilha, reserva das 8h40) | feito |
 | depois | Programação normal (inclua caminhoneiros de vez em quando, cerca de 1 vez a cada 7 a 10 dias) | |
 
 ## Foco definido pelo titular em 13/11/2026 (vale para todos os posts)

@@ -1,3 +1,4 @@
 media_id: 18137783692661360
 formato: vídeo com trilha (create_video_post)
 publicado por: reserva das 8h40 em 2026-11-17 08:46 -03
+comentário: 17994054725858112
