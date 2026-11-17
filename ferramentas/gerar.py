@@ -19,6 +19,8 @@ Tipos de slide (campo "type"):
  text     {kicker?, title, paragraphs[], src?}
  cta      {title, text, button}                                                  (sempre o ultimo; rodape com OAB)
 Spec: {"oab": "OAB/MG 211.217", "story": true, "slides": [...]}
+Com "formato": "video" (padrão do post diário desde 17/11/2026), os slides saem sem o "Arraste →",
+porque o post vira vídeo com trilha (ferramentas/video_post.py).
 Com "story": true, gera também story.jpg (1080x1920) a partir da capa, para publicar nos Stories.
 Opcional: "story_tag" troca o texto do botão do story (padrão: "Novo post no perfil · @jacksonbueno.adv").
 """
@@ -135,7 +137,7 @@ def md(s, em_style=""):
 REPO = BASE.parent  # raiz do repositório (fotos/ fica aqui)
 
 def page(n, body, light=False, last=False, photo=None, story=False, style="classic", filt=""):
-    swipe = "" if (last or story) else '<div class="swipe">Arraste →</div>'
+    swipe = "" if (last or story or spec.get("formato") == "video") else '<div class="swipe">Arraste →</div>'
     if photo and style == "classic": style = "photo"
     cls = " ".join(c for c in ["light" if light else "", "story" if story else "",
                                {"photo": "photo", "split": "split", "gold": "gold", "light": "lightc"}.get(style, "")] if c)

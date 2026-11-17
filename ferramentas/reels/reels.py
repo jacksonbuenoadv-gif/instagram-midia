@@ -546,30 +546,16 @@ def write_wav(name, a, sr=44100):
     with wave.open(name, "wb") as f:
         f.setnchannels(1); f.setsampwidth(2); f.setframerate(sr); f.writeframes((a * 32767).astype(np.int16).tobytes())
 def make_music(T, cut_times, hit_times, wd, seed=1):
-    sr = 44100; n = int(T * sr); t = np.arange(n) / sr; rng = np.random.default_rng(seed)
-    def note(m): return 440 * 2 ** ((m - 69) / 12)
-    beat = 60 / 112; bar = beat * 4
-    progs = [[[57, 60, 64], [53, 57, 60], [48, 52, 55], [55, 59, 62]], [[50, 53, 57], [58, 62, 65], [53, 57, 60], [57, 61, 64]]]
-    chords = progs[seed % 2]; mus = np.zeros(n)
+    # Trilha instrumental suave e motivacional (pedido do titular em 17/11/2026), a mesma de ferramentas/trilha.py
+    # usada nos stories e no post do feed em vídeo; muda de tom e andamento conforme o tema.
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+    from trilha import trilha as trilha_suave
+    sr = 44100; n = int(T * sr); rng = np.random.default_rng(seed)
     def add(arr, sig, s):
         s = int(s * sr); e = min(n, s + len(sig))
         if 0 <= s < n: arr[s:e] += sig[:e - s]
-    for k, b0 in enumerate(np.arange(0, T, beat)):
-        tt = np.arange(int(0.35 * sr)) / sr
-        add(mus, np.sin(2 * np.pi * (48 + 90 * np.exp(-tt * 35)) * tt) * np.exp(-tt * 9), b0)
-        if k % 2 == 1:
-            tt2 = np.arange(int(0.2 * sr)) / sr; add(mus, rng.standard_normal(len(tt2)) * np.exp(-tt2 * 25) * 0.35, b0)
-        tt3 = np.arange(int(0.05 * sr)) / sr; hp = np.diff(np.r_[0, rng.standard_normal(len(tt3))])
-        add(mus, hp * np.exp(-tt3 * 80) * 0.18, b0 + beat / 2)
-        c = chords[int(b0 / bar) % 4]; tt4 = np.arange(int(beat * 0.9 * sr)) / sr
-        add(mus, np.sign(np.sin(2 * np.pi * note(c[0] - 24) * tt4)) * 0.18 * np.exp(-tt4 * 3), b0)
-        for j, m in enumerate([c[0], c[1], c[2], c[1]]):
-            ts = np.arange(int(0.18 * sr)) / sr; add(mus, np.sin(2 * np.pi * note(m + 12) * ts) * np.exp(-ts * 18) * 0.16, b0 + j * beat / 4)
-    for k, b0 in enumerate(np.arange(0, T, bar)):
-        c = chords[k % 4]; tt = np.arange(int((bar + 0.3) * sr)) / sr
-        env = np.minimum(1, tt / 0.4) * np.minimum(1, np.maximum(0, (bar + 0.3 - tt) / 0.4))
-        add(mus, sum(np.sin(2 * np.pi * note(m) * tt) + 0.4 * np.sin(2 * np.pi * note(m) * 2.01 * tt) for m in c) * env * 0.07, b0)
-    mus *= np.minimum(1, t / 0.3) * np.minimum(1, (T - t) / 1.5)
+    mus, _ = trilha_suave(T, f"reels-{seed}")
+    mus = np.resize(mus, n) * 0.85 / (np.abs(mus).max() or 1)
     sfx = np.zeros(n)
     for c in cut_times:
         L = int(0.35 * sr); tt = np.arange(L) / sr; x = rng.standard_normal(L)
@@ -685,8 +671,8 @@ def main():
     sh(["ffmpeg", "-y", "-loglevel", "error", *ins, "-filter_complex", fc, "-map", "[a]", "-ac", "1", f"{wd}/voice.wav"])
     sh(["ffmpeg", "-y", "-loglevel", "error", "-i", f"{wd}/video.mp4", "-i", f"{wd}/voice.wav", "-i", f"{wd}/music.wav", "-i", f"{wd}/sfx.wav", "-filter_complex",
         "[1:a]highpass=f=80,acompressor=threshold=-18dB:ratio=3,volume=1.7,aformat=channel_layouts=stereo,asplit[v1][v2];"
-        "[2:a]volume=0.30,aformat=channel_layouts=stereo[m];[m][v1]sidechaincompress=threshold=0.05:ratio=5:attack=15:release=350[md];"
-        "[3:a]volume=0.35,aformat=channel_layouts=stereo[s];[md][v2][s]amix=inputs=3:normalize=0,alimiter=limit=0.95[a]",
+        "[2:a]volume=0.42,aformat=channel_layouts=stereo[m];[m][v1]sidechaincompress=threshold=0.05:ratio=3:attack=20:release=600[md];"
+        "[3:a]volume=0.18,aformat=channel_layouts=stereo[s];[md][v2][s]amix=inputs=3:normalize=0,alimiter=limit=0.95[a]",
         "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", f"{outdir}/reel.tmp.mp4"])
     os.rename(f"{outdir}/reel.tmp.mp4", f"{outdir}/reel.mp4")
     if spec.get("legenda"): open(f"{outdir}/legenda.txt", "w").write(spec["legenda"].strip() + "\n")
