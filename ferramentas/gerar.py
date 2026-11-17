@@ -19,8 +19,8 @@ Tipos de slide (campo "type"):
  text     {kicker?, title, paragraphs[], src?}
  cta      {title, text, button}                                                  (sempre o ultimo; rodape com OAB)
 Spec: {"oab": "OAB/MG 211.217", "story": true, "slides": [...]}
-Com "formato": "video" (padrão do post diário desde 17/11/2026), os slides saem sem o "Arraste →",
-porque o post vira vídeo com trilha (ferramentas/video_post.py).
+Com "formato": "video", os slides saem sem o "Arraste →" (só para ferramentas/video_post.py; usado em 17/11/2026).
+O post diário é CARROSSEL (decisão do titular em 17/11/2026): não use "formato": "video" nele.
 Com "story": true, gera também story.jpg (1080x1920) a partir da capa, para publicar nos Stories.
 Opcional: "story_tag" troca o texto do botão do story (padrão: "Novo post no perfil · @jacksonbueno.adv").
 """
