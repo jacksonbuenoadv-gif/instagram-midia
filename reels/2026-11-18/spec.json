@@ -1,0 +1,174 @@
+{
+ "tema": "Zumbido no ouvido e perda de audição por barulho no trabalho (PAIR) pode ser doença do trabalho",
+ "voz": "dupla",
+ "legenda": "Zumbido no ouvido por causa do barulho do trabalho dá direito? 👂\n\nPode dar. A perda de audição causada pelo barulho do trabalho (PAIR) está na lista oficial de doenças relacionadas ao trabalho (Portaria GM/MS 1.999/2023) e pode ser doença do trabalho (Lei 8.213/91, art. 20). 🔊\n\n⚠️ Sinais de alerta:\n👂 Zumbido, chiado ou apito no ouvido\n🔉 Pedir pra repetir e aumentar o volume da TV\n🗣️ Não entender a conversa no meio do barulho\n\n✅ Só entregar o protetor de ouvido não basta: a empresa tem que exigir o uso e diminuir o barulho (Súmula 289 do TST e NR-6).\n\nVocê pode ter direito a:\n➡️ Indenização da empresa\n➡️ Adicional de insalubridade, se o barulho passar do limite\n➡️ Auxílio-acidente do INSS, se a perda atrapalhar o seu trabalho (Lei 8.213/91, art. 86, §4º)\n\n📝 Faça uma audiometria (exame de audição), peça cópia dos exames que a empresa fez e peça a CAT. Se a empresa não fizer, você mesmo pode registrar.\n\n👉 Me chama no WhatsApp: o contato está no link da bio. Me conta o seu caso que eu te digo o que fazer.\n📲 Manda pra quem trabalha no barulho.\n\n🌐 jacksonbueno.adv.br\n👨‍⚖️ Dr. Jackson Bueno · Advogado de acidente de trabalho e doença ocupacional · OAB/MG 211.217\n\n#advogadodoencaocupacional #advogadoacidentedetrabalho #doencaocupacional #perdaauditiva #zumbido #pair #saudedotrabalhador",
+ "beats": [
+  {
+   "kind": "hook",
+   "voz": "mulher",
+   "clip": "trabalhador_estresse_maos",
+   "clip_start": 0.5,
+   "pill": "BARULHO NO TRABALHO",
+   "pill_emoji": "🔊",
+   "line1": "ZUMBIDO NO",
+   "line2": "OUVIDO?",
+   "key": "zumbido",
+   "say": "Tá com zumbido no ouvido por causa do barulho do trabalho?"
+  },
+  {
+   "kind": "cover",
+   "voz": "homem",
+   "clip": "britadeira_close",
+   "clip_start": 2.5,
+   "pill": "PERDA DE AUDIÇÃO",
+   "pill_emoji": "👂",
+   "pre": "Zumbido e perda de audição podem ser",
+   "big1": "DOENÇA DO",
+   "big2": "TRABALHO",
+   "key": "doença",
+   "badge": {
+    "photo": "fotos/jackson-retrato-terno.jpg",
+    "box": [
+     330,
+     80,
+     1030,
+     780
+    ]
+   },
+   "say": "Pois é: isso pode ser doença do trabalho, sim.",
+   "cap": null
+  },
+  {
+   "kind": "montage",
+   "voz": "mulher",
+   "say": "Britadeira o dia inteiro, máquina barulhenta na fábrica, solda e martelo na oficina.",
+   "segments": [
+    {
+     "clip": "britadeira_obra_rua",
+     "clip_start": 4.0,
+     "text": "OBRA E BRITADEIRA"
+    },
+    {
+     "clip": "fabrica_operario_inspecao",
+     "clip_start": 1.0,
+     "text": "MÁQUINA NA FÁBRICA",
+     "key": "máquina"
+    },
+    {
+     "clip": "soldador_oficina",
+     "clip_start": 0.5,
+     "text": "SOLDA E MARTELO",
+     "key": "solda"
+    }
+   ]
+  },
+  {
+   "kind": "card",
+   "voz": "homem",
+   "header": "SINAIS DE ALERTA",
+   "n": 1,
+   "total": 3,
+   "emoji": "👂",
+   "title": "ZUMBIDO",
+   "sub": "chiado ou apito no ouvido",
+   "say": "Zumbido: aquele chiado ou apito no ouvido."
+  },
+  {
+   "kind": "card",
+   "voz": "mulher",
+   "header": "SINAIS DE ALERTA",
+   "n": 2,
+   "total": 3,
+   "emoji": "🔉",
+   "title": "OUVIR MENOS",
+   "sub": "pede pra repetir, aumenta a TV",
+   "say": "Pedir pra repetir toda hora, ou aumentar o volume da TV."
+  },
+  {
+   "kind": "card",
+   "voz": "homem",
+   "header": "SINAIS DE ALERTA",
+   "n": 3,
+   "total": 3,
+   "emoji": "🗣️",
+   "title": "CONVERSA DIFÍCIL",
+   "sub": "no meio do barulho",
+   "say": "E não entender a conversa quando tem barulho em volta."
+  },
+  {
+   "kind": "statement",
+   "voz": "mulher",
+   "badge": "ATENÇÃO",
+   "badge_emoji": "⚠️",
+   "lines": [
+    "SÓ ENTREGAR",
+    "O PROTETOR"
+   ],
+   "highlight": "NÃO BASTA",
+   "highlight_key": "basta",
+   "follow1": "Tem que exigir o uso",
+   "follow2": "e diminuir o barulho.",
+   "follow_key": "exigir",
+   "source": "Súmula 289 do TST e NR-6",
+   "say": "E tem mais: só entregar o protetor de ouvido não basta. A empresa tem que exigir o uso, trocar quando estraga, e diminuir o barulho."
+  },
+  {
+   "kind": "list",
+   "voz": "homem",
+   "title1": "BARULHO NO TRABALHO?",
+   "title2": "PODE TER DIREITO A:",
+   "items": [
+    {
+     "tok": "R$",
+     "label": "Indenização da empresa",
+     "key": "indenização"
+    },
+    {
+     "tok": "20%",
+     "label": "Insalubridade (barulho)",
+     "key": "insalubridade"
+    },
+    {
+     "tok": "B94",
+     "label": "Auxílio-acidente do INSS",
+     "key": "auxílio"
+    }
+   ],
+   "say": "Você pode ter direito a indenização da empresa, ao adicional de insalubridade se o barulho passar do limite, e ao auxílio-acidente do INSS, se a perda de audição atrapalhar o seu trabalho."
+  },
+  {
+   "kind": "check",
+   "voz": "mulher",
+   "kicker": "TEM ZUMBIDO?",
+   "title": "O QUE FAZER",
+   "items": [
+    {
+     "label": "Faça exame de audição",
+     "key": "exame"
+    },
+    {
+     "label": "Peça cópia dos exames",
+     "key": "cópia"
+    },
+    {
+     "label": "Peça a CAT",
+     "key": "CAT"
+    }
+   ],
+   "say": "Então faz assim: faça um exame de audição, a audiometria. Peça cópia dos exames que a empresa fez. E peça a CAT. Se a empresa não fizer, você mesmo pode registrar."
+  },
+  {
+   "kind": "cta",
+   "voz": "homem",
+   "photo": "fotos/jackson-mesa-sorrindo_cta.jpg",
+   "question": "Quer entender o seu caso?",
+   "site": "WhatsApp: contato na bio",
+   "button": "Envie pra quem trabalha no barulho",
+   "button_emoji": "🔊",
+   "key_site": "WhatsApp",
+   "key_button": "manda",
+   "say": "Quer entender o seu caso? Fala com um advogado de doença ocupacional. Me chama no WhatsApp, o contato tá na bio. E manda este vídeo pra quem trabalha no barulho.",
+   "cap": null
+  }
+ ]
+}
