@@ -13,7 +13,7 @@ Use quando o Search Console não estiver disponível pelo Windsor (por exemplo, 
 | Pensão alimentícia: FGTS e rescisão (outras verbas) | ~30 | |
 | Valor de indenização por acidente/doença do trabalho (tabela, sequela, tendinite) | ~40 | |
 | Bursite é doença ocupacional? / dor no ombro, carregar peso no ombro | ~30 | |
-| Indenização por LER (lesão por esforço repetitivo) | ~25 | |
+| Indenização por LER (lesão por esforço repetitivo) | ~25 | 18/11/2026 (LER/DORT: dor e formigamento na mão) |
 | Hérnia de disco: é doença ocupacional? ganhar causa? pode dirigir? | ~35 | |
 | Perda auditiva no trabalho: direitos, pode ser demitido? | ~30 | |
 | Adicional noturno de motorista de caminhão (outras verbas) | ~15 | |
