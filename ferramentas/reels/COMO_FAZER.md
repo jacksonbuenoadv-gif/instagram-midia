@@ -10,6 +10,9 @@ Português do Brasil, linguagem simples, sem juridiquês. O titular revisa depoi
 - **Elementos discretos, não gigantes:** títulos de impacto com no máximo ~104 px de fonte (capa e gancho), ~76 px nos cartões e frases de destaque. Não aumente esses tamanhos; se um texto não couber, encurte ou quebre em duas linhas.
 - **Legendas animadas:** o tamanho atual (54 px, largura total) está aprovado — não mexer.
 - **Capa:** vídeo de banco em destaque (caminhão, máquina, situação) e a foto do titular só no selo redondo pequeno à direita; "DOENÇA DO TRABALHO" (ou a frase equivalente) no tamanho moderado do padrão, nunca de borda a borda.
+- **Contraste (pedido do titular, 18/11/2026):** texto nunca solto sobre vídeo claro. O título do gancho fica num painel
+  escuro sólido com borda âmbar (já automático no `reels.py`). Ao conferir as prévias, reprove qualquer texto "perdido",
+  sem contraste com o fundo ou com cara de amador; se o vídeo for muito claro (camisa branca, céu, parede clara), troque o clipe.
 - Ao conferir as prévias, reprove qualquer quadro em que algo encoste nas laterais ou pareça grande demais.
 
 ## Narração (orientação do titular de 12/11/2026, até ele mudar)

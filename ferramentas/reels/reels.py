@@ -273,7 +273,9 @@ def captions(img, t, b):
 # ---------------- cenas ----------------
 def s_hook(t, dur, b, gt):
     img = sframe(b["clip"], t * 0.85, b.get("clip_start", 0))
-    img = grad_top(img, 520, 200); img = grad_bottom(img, 900, 1500, 235)
+    # Contraste (pedido do titular, 18/11/2026): vídeo claro deixava o título "perdido". Agora o vídeo é escurecido
+    # de leve, o degradê começa mais alto e o título fica num painel escuro sólido com borda âmbar.
+    img = shade(img, 0.22); img = grad_top(img, 520, 200); img = grad_bottom(img, 760, 1250, 245)
     p = eb(t / 0.3); lay = layer(); dl = ImageDraw.Draw(lay)
     pill(lay, dl, b.get("pill", "CAMINHONEIRO"), b.get("pill_emoji", "🚛"), cx=W / 2, y=330, h=70, size=36)
     paste(img, lay, cl(p * 1.5), scale=0.6 + 0.4 * p, cx=W // 2, cy=365)
@@ -281,15 +283,18 @@ def s_hook(t, dur, b, gt):
     if t > td:
         q = eb((t - td) / 0.3); shk = math.sin((t - td) * 70) * 10 * max(0, 1 - (t - td) / 0.4)
         lay = layer(); dl = ImageDraw.Draw(lay)
-        f = M(900, min(fit(b["line1"], 900, CW, 104).size, fit(b["line2"], 900, CW, 104).size))
-        dl.text((W // 2, 1050), b["line1"], font=f, fill=WHITE, anchor="mt", stroke_width=4, stroke_fill=NAVY)
-        dl.text((W // 2, 1060 + f.size), b["line2"], font=f, fill=AMBER, anchor="mt", stroke_width=4, stroke_fill=NAVY)
-        paste(img, lay, cl(q * 1.5), dx=shk, scale=1.4 - 0.4 * q, cx=W // 2, cy=1200)
+        f = M(900, min(fit(b["line1"], 900, CW - 100, 100).size, fit(b["line2"], 900, CW - 100, 100).size))
+        tw = max(dl.textlength(b["line1"], font=f), dl.textlength(b["line2"], font=f))
+        bw = min(CW, tw + 100); y0 = 1010; y1 = y0 + 2 * f.size + 90
+        dl.rounded_rectangle((W / 2 - bw / 2, y0, W / 2 + bw / 2, y1), 34, fill=NAVY + (238,), outline=AMBER, width=5)
+        dl.text((W // 2, y0 + 40), b["line1"], font=f, fill=WHITE, anchor="mt")
+        dl.text((W // 2, y0 + 50 + f.size), b["line2"], font=f, fill=AMBER, anchor="mt")
+        paste(img, lay, cl(q * 1.5), dx=shk, scale=1.4 - 0.4 * q, cx=W // 2, cy=(y0 + y1) // 2)
     return img
 
 def s_cover(t, dur, b, gt):
     img = sframe(b["clip"], t, b.get("clip_start", 0))
-    img = grad_top(img, 300, 150); img = grad_bottom(img, 980, 1400, 245)
+    img = grad_top(img, 300, 150); img = grad_bottom(img, 820, 1350, 248)   # degradê mais alto: texto legível em vídeo claro (18/11/2026)
     d = ImageDraw.Draw(img)
     d.text((W // 2, 150), "JACKSON BUENO  ·  ADVOGADO TRABALHISTA", font=P("Medium", 26), fill=WHITE, anchor="mt", stroke_width=2, stroke_fill=NAVY)
     bd = b.get("badge")
