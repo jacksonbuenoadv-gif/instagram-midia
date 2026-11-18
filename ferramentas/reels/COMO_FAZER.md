@@ -25,6 +25,11 @@ Português do Brasil, linguagem simples, sem juridiquês. O titular revisa depoi
   (sem mudança de tom, mais expressividade, sem aceleração, voz masculina nova); não volte aos valores antigos.
 - Cada frase é conferida automaticamente por transcrição e refeita se sair errada (ver log "voz ... tentativa").
   Se no log uma palavra importante continuar errada depois das tentativas, troque a palavra por um sinônimo simples e gere de novo.
+- **Vozes reais autorizadas (decisão do titular, 18/11/2026):** a voz atual soa metalizada. Um homem e uma mulher vão gravar
+  amostras na pasta "Vozes Reels" do Google Drive. Use-as SÓ depois que `ferramentas/reels/voz/README.md` registrar
+  "aprovadas pelo titular em <data>". Aí, baixe as duas para /tmp (nunca para o repositório, que é público) e gere com
+  `REELS_VOZ_MULHER_REF=/tmp/... REELS_VOZ_HOMEM_REF=/tmp/...`. Se já estiverem no Drive mas ainda sem aprovação, use as vozes
+  antigas e acrescente à notificação final "(vozes novas no Drive aguardando sua aprovação: me peça a amostra)".
 - A narração com essas vozes leva ~10 min no total (modelo roda em CPU). A primeira execução instala o modelo (~3 GB).
 
 ## 1. Tema (sempre o nicho)
