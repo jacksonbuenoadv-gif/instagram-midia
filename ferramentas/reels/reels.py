@@ -494,7 +494,11 @@ def tts(text, out, expected=None, voz=None):
         sh([sys.executable, "-m", "piper", "-m", VOICE, "-f", out, "--length-scale", "0.86", "--sentence-silence", "0.1"],
            input=text.encode(), capture_output=True)
         return
-    ref = {"mulher": None, "homem": os.path.join(VOZ_DIR, "homem_ref.wav"), "titular": os.environ.get("REELS_VOZ_REF")}[voz]
+    # Vozes reais autorizadas (decisão do titular, 18/11/2026): REELS_VOZ_MULHER_REF / REELS_VOZ_HOMEM_REF apontam para
+    # amostras guardadas fora do repositório público (Google Drive). Sem elas, usa as referências sintéticas antigas.
+    ref = {"mulher": os.environ.get("REELS_VOZ_MULHER_REF") or None,
+           "homem": os.environ.get("REELS_VOZ_HOMEM_REF") or os.path.join(VOZ_DIR, "homem_ref.wav"),
+           "titular": os.environ.get("REELS_VOZ_REF")}[voz]
     if voz == "titular" and not ref: sys.exit("voz 'titular' exige REELS_VOZ_REF")
     exag = os.environ.get("REELS_VOZ_EXAG", "0.7")
     import hashlib, copy
