@@ -22,5 +22,6 @@ Use quando o Search Console não estiver disponível pelo Windsor (por exemplo, 
 | Burnout é acidente de trabalho? | ~4 | |
 | Me machuquei no trabalho: quem paga as despesas? | ~5 | 14/11/2026 |
 | Como provar doença ocupacional | ~4 | |
+| Auxílio-acidente: sequela depois do acidente, quem tem direito, valor (busca de pergunta) | — | 19/11/2026 |
 
 Atualize a coluna "Já postado?" quando publicar um tema.
