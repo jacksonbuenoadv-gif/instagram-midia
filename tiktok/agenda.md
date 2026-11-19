@@ -46,3 +46,9 @@ Agendados em 16/11/2026 (conteúdos novos do Instagram, horário de Brasília). 
 | 18/11 | 08:30 | carrossel posts/2026-11-14 |
 | 19/11 | 08:30 | carrossel posts/2026-11-15 |
 | 20/11 | 08:30 | carrossel posts/2026-11-16 |
+| 19/11 | 17:00 | Reels reels/2026-11-18 (selo IA) |
+| 21/11 | 08:30 | vídeo posts/2026-11-17 |
+| 22/11 | 08:30 | carrossel posts/2026-11-18 |
+| 23/11 | 08:30 | carrossel posts/2026-11-19 |
+
+Agendados em 19/11/2026 (linhas acima a partir de 19/11 17:00). Conferido no TikTok Studio: todos com legenda.
