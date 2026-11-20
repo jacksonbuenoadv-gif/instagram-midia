@@ -14,6 +14,12 @@ A rotina diária segue esta fila antes da programação normal. Depois de public
 | 2026-11-17 | Programação normal: ACIDENTE DE TRABALHO (16/11 foi doença) → feito: "B31 ou B91: qual a diferença?" (vídeo com trilha, reserva das 8h40) | feito |
 | 2026-11-18 | Programação normal: DOENÇA OCUPACIONAL (17/11 foi acidente) → feito: "Dor e formigamento na mão por causa do trabalho dá direito?" (LER/DORT, carrossel, reserva das 8h40) | feito |
 | 2026-11-19 | Programação normal: ACIDENTE DE TRABALHO (18/11 foi doença) → feito: "Ficou com sequela depois do acidente? Auxílio-acidente" (carrossel, reserva das 8h40, media 18120287890821744) | feito |
+| 2026-11-20 | DOENÇA OCUPACIONAL: "Dor nas costas por causa do trabalho dá direito?" (carrossel pronto em posts/2026-11-20, adiantado em 20/11; falta publicar) | pronto |
+| 2026-11-21 | ACIDENTE: "Acidente no caminho do trabalho é acidente de trabalho?" (pronto em posts/2026-11-21; falta publicar) | pronto |
+| 2026-11-22 | DOENÇA OCUPACIONAL: "Ansiedade, depressão e burnout por causa do trabalho" (pronto em posts/2026-11-22; falta publicar) | pronto |
+| 2026-11-23 | ACIDENTE: "A empresa não emitiu a CAT: e agora?" (pronto em posts/2026-11-23; falta publicar) | pronto |
+| 2026-11-24 | DOENÇA OCUPACIONAL: "Como provar que a doença é do trabalho?" (pronto em posts/2026-11-24; falta publicar) | pronto |
+| 2026-11-25 | ACIDENTE: "Indenização por acidente de trabalho: quais tipos existem?" (pronto em posts/2026-11-25; falta publicar) | pronto |
 | depois | Programação normal (inclua caminhoneiros de vez em quando, cerca de 1 vez a cada 7 a 10 dias) | |
 
 ## Foco definido pelo titular em 13/11/2026 (vale para todos os posts)
@@ -31,4 +37,4 @@ A rotina diária segue esta fila antes da programação normal. Depois de public
 - Estilos: classic, photo, split, gold, light (ver cabeçalho de ferramentas/gerar.py).
 - Nunca repita o estilo do dia anterior; em cada 5 dias, use pelo menos 3 estilos diferentes.
 - Use foto do titular em cerca de 3 de cada 5 capas, alternando as fotos e os filtros (nenhum, pb, quente, duotone).
-- Histórico de estilos: 10/11 classic · 11/11 classic · 12/11 split (bracos-cruzados_vertical) · 13/11 gold (sem foto) · 14/11 split (sala-reuniao_vertical, duotone) · 15/11 light (sem foto) · 16/11 photo (retrato-terno, quente) · 17/11 split (corpo-inteiro_vertical, pb) · 18/11 classic (sem foto) · 19/11 photo (bracos-cruzados, sem filtro).
+- Histórico de estilos: 10/11 classic · 11/11 classic · 12/11 split (bracos-cruzados_vertical) · 13/11 gold (sem foto) · 14/11 split (sala-reuniao_vertical, duotone) · 15/11 light (sem foto) · 16/11 photo (retrato-terno, quente) · 17/11 split (corpo-inteiro_vertical, pb) · 18/11 classic (sem foto) · 19/11 photo (bracos-cruzados, sem filtro) · 20/11 split (mesa-sorrindo_vertical, duotone) · 21/11 classic (sem foto) · 22/11 photo (mesa-notebook-serio, quente) · 23/11 gold (sem foto) · 24/11 split (sala-reuniao_vertical, sem filtro) · 25/11 light (sem foto).
