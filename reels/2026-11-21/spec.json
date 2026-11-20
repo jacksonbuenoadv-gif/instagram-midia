@@ -1,0 +1,153 @@
+{
+ "tema": "Se machucou no trabalho? O que fazer: CAT, B91, estabilidade e FGTS (acidente de trabalho típico)",
+ "voz": "dupla",
+ "legenda": "Se machucou no trabalho e não sabe o que fazer? 🦺\n\nCalma: o que acontece trabalhando e causa lesão é acidente de trabalho, e a lei protege você (Lei 8.213/91, art. 19). 🛡️\n\n✅ O que fazer:\n🏥 Procure atendimento médico e guarde atestado e exames\n📝 Peça a CAT. Se a empresa não emitir, você, o médico ou o sindicato podem registrar (art. 22, § 2º)\n📸 Guarde provas: fotos do local, mensagens e o nome de quem viu\n\n⚠️ Afastou por mais de 15 dias? Você pode receber o B91 do INSS (art. 60). Depois que o benefício termina, há estabilidade de 12 meses (art. 118), e o FGTS continua sendo depositado durante a licença por acidente de trabalho (Lei 8.036/90, art. 15, § 5º).\n\nVocê pode ter direito a:\n➡️ Benefício do INSS (B91)\n➡️ Estabilidade de 12 meses\n➡️ Indenização da empresa, se ela teve culpa (Constituição, art. 7º, XXVIII)\n\n👉 Me chama no WhatsApp: o contato está no link da bio. Me conta o seu caso que eu te digo o que fazer.\n📲 Manda pra quem precisa ver.\n\n🌐 jacksonbueno.adv.br\n👨‍⚖️ Dr. Jackson Bueno · Advogado de acidente de trabalho e doença ocupacional · OAB/MG 211.217\n\n#advogadoacidentedetrabalho #acidentedetrabalho #cat #inss #b91 #direitodotrabalhador",
+ "beats": [
+  {
+   "kind": "hook",
+   "voz": "mulher",
+   "clip": "obra_escoras_peao",
+   "clip_start": 1.0,
+   "pill": "ACIDENTE DE TRABALHO",
+   "pill_emoji": "🦺",
+   "line1": "SE MACHUCOU",
+   "line2": "NO TRABALHO?",
+   "key": "machucou",
+   "say": "Se machucou no trabalho e não sabe o que fazer?"
+  },
+  {
+   "kind": "cover",
+   "voz": "homem",
+   "clip": "fundicao_faiscas",
+   "clip_start": 1.0,
+   "pill": "SE MACHUCOU",
+   "pill_emoji": "🦺",
+   "pre": "Isso é",
+   "big1": "ACIDENTE DE",
+   "big2": "TRABALHO",
+   "key": "acidente",
+   "badge": {
+    "photo": "fotos/jackson-retrato-terno.jpg",
+    "box": [
+     330,
+     80,
+     1030,
+     780
+    ]
+   },
+   "say": "Calma. Se você se machucou trabalhando, isso é acidente de trabalho, e a lei protege você.",
+   "cap": null
+  },
+  {
+   "kind": "montage",
+   "voz": "mulher",
+   "say": "Queda na obra, corte ou queimadura numa máquina, esforço com peso.",
+   "segments": [
+    {
+     "clip": "obra_ferragem_laje",
+     "clip_start": 1.0,
+     "text": "QUEDA NA OBRA"
+    },
+    {
+     "clip": "soldador_faiscas",
+     "clip_start": 1.0,
+     "text": "CORTE E QUEIMADURA",
+     "key": "corte"
+    },
+    {
+     "clip": "obra_peao_abaixado",
+     "clip_start": 1.0,
+     "text": "ESFORÇO COM PESO",
+     "key": "esforço"
+    }
+   ]
+  },
+  {
+   "kind": "card",
+   "voz": "homem",
+   "header": "O QUE FAZER",
+   "n": 1,
+   "total": 3,
+   "emoji": "🏥",
+   "title": "ATENDIMENTO MÉDICO",
+   "sub": "guarde atestado e exames",
+   "say": "Primeiro: procure atendimento médico e guarde o atestado e os exames."
+  },
+  {
+   "kind": "card",
+   "voz": "mulher",
+   "header": "O QUE FAZER",
+   "n": 2,
+   "total": 3,
+   "emoji": "📝",
+   "title": "PEÇA A CAT",
+   "sub": "a empresa tem que emitir",
+   "say": "Depois, peça a CAT. A empresa tem que emitir, e se não emitir, você, o médico ou o sindicato podem registrar."
+  },
+  {
+   "kind": "card",
+   "voz": "homem",
+   "header": "O QUE FAZER",
+   "n": 3,
+   "total": 3,
+   "emoji": "📸",
+   "title": "GUARDE PROVAS",
+   "sub": "fotos, mensagens e testemunhas",
+   "say": "E guarde provas: fotos do local, mensagens, e o nome de quem viu."
+  },
+  {
+   "kind": "statement",
+   "voz": "mulher",
+   "badge": "ATENÇÃO",
+   "badge_emoji": "⚠️",
+   "lines": [
+    "AFASTOU MAIS",
+    "DE 15 DIAS?"
+   ],
+   "highlight": "PODE TER O B91",
+   "highlight_key": "B91",
+   "follow1": "Estabilidade de 12 meses",
+   "follow2": "e o FGTS continua.",
+   "follow_key": "estabilidade",
+   "source": "Lei 8.213/91, arts. 60 e 118; Lei 8.036/90, art. 15, § 5º",
+   "say": "Se o afastamento passar de 15 dias, você pode receber o B91 do INSS. Depois que o benefício termina, tem estabilidade de 12 meses, e o FGTS continua sendo depositado durante a licença."
+  },
+  {
+   "kind": "list",
+   "voz": "homem",
+   "title1": "ACIDENTE DE TRABALHO?",
+   "title2": "PODE TER DIREITO A:",
+   "items": [
+    {
+     "tok": "B91",
+     "label": "Benefício do INSS",
+     "key": "benefício"
+    },
+    {
+     "tok": "12",
+     "label": "Meses de estabilidade",
+     "key": "estabilidade"
+    },
+    {
+     "tok": "R$",
+     "label": "Indenização, se houve culpa",
+     "key": "indenização"
+    }
+   ],
+   "say": "Resumindo: benefício do INSS, estabilidade de 12 meses, e indenização da empresa, se ela teve culpa."
+  },
+  {
+   "kind": "cta",
+   "voz": "homem",
+   "photo": "fotos/jackson-mesa-sorrindo_cta.jpg",
+   "question": "Quer entender o seu caso?",
+   "site": "WhatsApp: contato na bio",
+   "button": "Envie pra quem precisa ver",
+   "button_emoji": "🦺",
+   "key_site": "WhatsApp",
+   "key_button": "manda",
+   "say": "Quer entender o seu caso? Fala com um advogado de acidente de trabalho. Me chama no WhatsApp, o contato tá na bio. E manda este vídeo pra quem precisa ver.",
+   "cap": null
+  }
+ ]
+}

@@ -1,0 +1,174 @@
+{
+ "tema": "Dor no ombro por carregar peso ou levantar o braço pode ser doença do trabalho (lesões do ombro)",
+ "voz": "dupla",
+ "legenda": "Dor no ombro por carregar peso ou levantar o braço dá direito? 💪\n\nPode dar. Lesões do ombro, como tendinite, bursite e manguito rotador, podem ser doença do trabalho quando o trabalho causou ou piorou o problema (Lei 8.213/91, art. 20). Não é automático: a ligação com o trabalho precisa ser comprovada. 🏗️\n\n⚠️ Sinais de alerta:\n💪 Dor ao levantar o braço\n📉 Perda de força\n📦 Dificuldade para carregar peso\n\n✅ O trabalho não precisa ser a única causa: se contribuiu diretamente para a lesão, também pode contar (art. 21, I).\n\nVocê pode ter direito a:\n➡️ B91 do INSS, se ficar afastado por mais de 15 dias (art. 60)\n➡️ Estabilidade de 12 meses depois do benefício (art. 118)\n➡️ Auxílio-acidente, se ficar sequela que reduza sua capacidade de trabalho (art. 86)\n\n📝 Procure um médico, guarde exames de imagem e laudos, e peça a CAT. Se a empresa não fizer, você mesmo pode registrar (art. 22, § 2º).\n\n👉 Me chama no WhatsApp: o contato está no link da bio. Me conta o seu caso que eu te digo o que fazer.\n📲 Manda pra quem carrega peso no trabalho.\n\n🌐 jacksonbueno.adv.br\n👨‍⚖️ Dr. Jackson Bueno · Advogado de acidente de trabalho e doença ocupacional · OAB/MG 211.217\n\n#advogadodoencaocupacional #doencaocupacional #dornoombro #tendinite #bursite #direitodotrabalhador",
+ "beats": [
+  {
+   "kind": "hook",
+   "voz": "mulher",
+   "clip": "armazem_caixa_pesada",
+   "clip_start": 1.0,
+   "pill": "DOR NO OMBRO",
+   "pill_emoji": "💪",
+   "line1": "DOR NO",
+   "line2": "OMBRO?",
+   "key": "ombro",
+   "say": "Dor no ombro de tanto carregar peso no trabalho?"
+  },
+  {
+   "kind": "cover",
+   "voz": "homem",
+   "clip": "carregando_caixas",
+   "clip_start": 1.0,
+   "pill": "OMBRO E BRAÇO",
+   "pill_emoji": "💪",
+   "pre": "Dor no ombro pode ser",
+   "big1": "DOENÇA DO",
+   "big2": "TRABALHO",
+   "key": "doença",
+   "badge": {
+    "photo": "fotos/jackson-retrato-terno.jpg",
+    "box": [
+     330,
+     80,
+     1030,
+     780
+    ]
+   },
+   "say": "Pois é: dor no ombro pode ser doença do trabalho, sim.",
+   "cap": null
+  },
+  {
+   "kind": "montage",
+   "voz": "mulher",
+   "say": "Entrega e caixa o dia todo, computador sem pausa, obra e esforço com os braços.",
+   "segments": [
+    {
+     "clip": "entregadora_caixa",
+     "clip_start": 1.0,
+     "text": "CAIXAS O DIA TODO"
+    },
+    {
+     "clip": "dor_pescoco_computador",
+     "clip_start": 1.0,
+     "text": "COMPUTADOR SEM PAUSA",
+     "key": "computador"
+    },
+    {
+     "clip": "obra_equipe_concreto",
+     "clip_start": 1.0,
+     "text": "OBRA E ESFORÇO",
+     "key": "obra"
+    }
+   ]
+  },
+  {
+   "kind": "card",
+   "voz": "homem",
+   "header": "SINAIS DE ALERTA",
+   "n": 1,
+   "total": 3,
+   "emoji": "💪",
+   "title": "DOR AO LEVANTAR",
+   "sub": "o braço acima do ombro",
+   "say": "Dor na hora de levantar o braço."
+  },
+  {
+   "kind": "card",
+   "voz": "mulher",
+   "header": "SINAIS DE ALERTA",
+   "n": 2,
+   "total": 3,
+   "emoji": "📉",
+   "title": "PERDA DE FORÇA",
+   "sub": "o braço fraqueja",
+   "say": "Perder força no braço, e deixar as coisas caírem."
+  },
+  {
+   "kind": "card",
+   "voz": "homem",
+   "header": "SINAIS DE ALERTA",
+   "n": 3,
+   "total": 3,
+   "emoji": "📦",
+   "title": "PESO DIFÍCIL",
+   "sub": "carregar fica um sacrifício",
+   "say": "E achar cada vez mais difícil carregar peso no serviço."
+  },
+  {
+   "kind": "statement",
+   "voz": "mulher",
+   "badge": "ATENÇÃO",
+   "badge_emoji": "⚠️",
+   "lines": [
+    "O TRABALHO NÃO",
+    "PRECISA SER A ÚNICA"
+   ],
+   "highlight": "CAUSA",
+   "highlight_key": "causa",
+   "follow1": "Se ajudou a causar",
+   "follow2": "a lesão, pode contar.",
+   "follow_key": "ajudou",
+   "source": "Lei 8.213/91, art. 21, I",
+   "say": "E tem mais: o trabalho não precisa ser a única causa. Se ele ajudou a causar ou a piorar a lesão, isso pode contar."
+  },
+  {
+   "kind": "list",
+   "voz": "homem",
+   "title1": "DOR NO OMBRO?",
+   "title2": "PODE TER DIREITO A:",
+   "items": [
+    {
+     "tok": "B91",
+     "label": "Benefício do INSS",
+     "key": "benefício"
+    },
+    {
+     "tok": "12",
+     "label": "Meses de estabilidade",
+     "key": "estabilidade"
+    },
+    {
+     "tok": "B94",
+     "label": "Auxílio-acidente do INSS",
+     "key": "auxílio"
+    }
+   ],
+   "say": "Você pode ter direito ao benefício do INSS, à estabilidade de 12 meses depois dele, e ao auxílio-acidente, se ficar sequela que atrapalhe o seu trabalho."
+  },
+  {
+   "kind": "check",
+   "voz": "mulher",
+   "kicker": "DOR NO OMBRO?",
+   "title": "O QUE FAZER",
+   "items": [
+    {
+     "label": "Procure um médico",
+     "key": "médico"
+    },
+    {
+     "label": "Guarde exames e laudos",
+     "key": "exames"
+    },
+    {
+     "label": "Peça a CAT",
+     "key": "CAT"
+    }
+   ],
+   "say": "Então faz assim: procure um médico, guarde os exames e laudos, e peça a CAT. Se a empresa não fizer, você mesmo pode registrar."
+  },
+  {
+   "kind": "cta",
+   "voz": "homem",
+   "photo": "fotos/jackson-mesa-sorrindo_cta.jpg",
+   "question": "Quer entender o seu caso?",
+   "site": "WhatsApp: contato na bio",
+   "button": "Envie pra quem carrega peso",
+   "button_emoji": "📦",
+   "key_site": "WhatsApp",
+   "key_button": "manda",
+   "say": "Quer entender o seu caso? Fala com um advogado de doença ocupacional. Me chama no WhatsApp, o contato tá na bio. E manda este vídeo pra quem carrega peso no trabalho.",
+   "cap": null
+  }
+ ]
+}
