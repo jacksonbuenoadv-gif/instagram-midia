@@ -16,7 +16,7 @@ A rotina diária segue esta fila antes da programação normal. Depois de public
 | 2026-11-19 | Programação normal: ACIDENTE DE TRABALHO (18/11 foi doença) → feito: "Ficou com sequela depois do acidente? Auxílio-acidente" (carrossel, reserva das 8h40, media 18120287890821744) | feito |
 | 2026-11-20 | DOENÇA OCUPACIONAL: "Dor nas costas por causa do trabalho dá direito?" (carrossel pronto em posts/2026-11-20, adiantado em 20/11; falta publicar) | feito |
 | 2026-11-21 | ACIDENTE: "Acidente no caminho do trabalho é acidente de trabalho?" (publicado, media 18134382868794822) | feito |
-| 2026-11-22 | DOENÇA OCUPACIONAL: "Ansiedade, depressão e burnout por causa do trabalho" (pronto em posts/2026-11-22; falta publicar) | pronto |
+| 2026-11-22 | DOENÇA OCUPACIONAL: "Ansiedade, depressão e burnout por causa do trabalho" (pronto em posts/2026-11-22; publicado em 22/11, media 18113527406268757) | feito |
 | 2026-11-23 | ACIDENTE: "A empresa não emitiu a CAT: e agora?" (pronto em posts/2026-11-23; falta publicar) | pronto |
 | 2026-11-24 | DOENÇA OCUPACIONAL: "Como provar que a doença é do trabalho?" (pronto em posts/2026-11-24; falta publicar) | pronto |
 | 2026-11-25 | ACIDENTE: "Indenização por acidente de trabalho: quais tipos existem?" (pronto em posts/2026-11-25; falta publicar) | pronto |
