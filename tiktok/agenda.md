@@ -58,3 +58,12 @@ Agendado em 20/11/2026 (a pedido do titular): conferido no TikTok Studio, com le
 | Data | Hora | Conteúdo |
 |---|---|---|
 | 24/11 | 08:30 | carrossel posts/2026-11-20 |
+
+Agendados em 23/11/2026 (horários de 22/11 e 23/11 08:30 já tinham passado ou estavam ocupados; usados os próximos dias livres). Conferido no TikTok Studio: todos com legenda.
+
+| Data | Hora | Conteúdo |
+|---|---|---|
+| 23/11 | 17:00 | Reels reels/2026-11-21 (selo IA) |
+| 25/11 | 08:30 | carrossel posts/2026-11-21 |
+| 26/11 | 08:30 | carrossel posts/2026-11-22 |
+| 27/11 | 08:30 | carrossel posts/2026-11-23 |
