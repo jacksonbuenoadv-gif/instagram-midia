@@ -19,7 +19,7 @@ A rotina diária segue esta fila antes da programação normal. Depois de public
 | 2026-11-22 | DOENÇA OCUPACIONAL: "Ansiedade, depressão e burnout por causa do trabalho" (pronto em posts/2026-11-22; publicado em 22/11, media 18113527406268757) | feito |
 | 2026-11-23 | ACIDENTE: "A empresa não emitiu a CAT: e agora?" (publicado 23/11, media 17940553641408959) | feito |
 | 2026-11-24 | DOENÇA OCUPACIONAL: "Como provar que a doença é do trabalho?" (publicado 24/11, media 18175462279457381) | feito |
-| 2026-11-25 | ACIDENTE: "Indenização por acidente de trabalho: quais tipos existem?" (pronto em posts/2026-11-25; falta publicar) | pronto |
+| 2026-11-25 | ACIDENTE: "Indenização por acidente de trabalho: quais tipos existem?" (publicado 25/11 pela reserva das 8h40, media 18074162411502489) | feito |
 | 2026-11-26 | DOENÇA: "INSS reconheceu a doença como do trabalho sem você provar? (NTEP)" (pronto em posts/2026-11-26; falta publicar) | pronto |
 | 2026-11-27 | ACIDENTE: "INSS negou seu benefício? Você pode recorrer (30 dias)" (pronto em posts/2026-11-27; falta publicar) | pronto |
 | 2026-11-28 | ACIDENTE: "Contrato de experiência: tem estabilidade após acidente?" (pronto em posts/2026-11-28; falta publicar) | pronto |

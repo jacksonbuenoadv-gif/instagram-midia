@@ -11,7 +11,7 @@ Use quando o Search Console não estiver disponível pelo Windsor (por exemplo, 
 | Depois de acidente de trabalho posso ser demitido? | ~65 | 10/11/2026 |
 | Advogado de acidente de trabalho (busca por serviço) | ~120 | |
 | Pensão alimentícia: FGTS e rescisão (outras verbas) | ~30 | |
-| Valor de indenização por acidente/doença do trabalho (tabela, sequela, tendinite) | ~40 | |
+| Valor de indenização por acidente/doença do trabalho (tabela, sequela, tendinite) | ~40 | 25/11/2026 (tipos de indenização, sem valores) |
 | Bursite é doença ocupacional? / dor no ombro, carregar peso no ombro | ~30 | |
 | Indenização por LER (lesão por esforço repetitivo) | ~25 | 18/11/2026 (LER/DORT: dor e formigamento na mão) |
 | Hérnia de disco: é doença ocupacional? ganhar causa? pode dirigir? | ~35 | |
