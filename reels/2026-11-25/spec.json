@@ -27,12 +27,12 @@
    "big2": "TRABALHO",
    "key": "doença",
    "badge": {
-    "photo": "fotos/jackson-retrato-terno.jpg",
+    "photo": "fotos/jackson-gravata-frontal-mesa.jpg",
     "box": [
-     330,
-     80,
-     1030,
-     780
+     325,
+     215,
+     695,
+     585
     ]
    },
    "say": "Pois é: dor no ombro pode ser doença do trabalho, sim.",
@@ -160,7 +160,7 @@
   {
    "kind": "cta",
    "voz": "homem",
-   "photo": "fotos/jackson-mesa-sorrindo_cta.jpg",
+   "photo": "fotos/jackson-gravata-mao-no-peito.jpg",
    "question": "Quer entender o seu caso?",
    "site": "WhatsApp: contato na bio",
    "button": "Envie pra quem carrega peso",
@@ -168,7 +168,13 @@
    "key_site": "WhatsApp",
    "key_button": "manda",
    "say": "Quer entender o seu caso? Fala com um advogado de doença ocupacional. Me chama no WhatsApp, o contato tá na bio. E manda este vídeo pra quem carrega peso no trabalho.",
-   "cap": null
+   "cap": null,
+   "photo_box": [
+    150,
+    40,
+    909,
+    1350
+   ]
   }
  ]
 }
