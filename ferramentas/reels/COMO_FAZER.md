@@ -2,8 +2,47 @@
 
 > **Regra universal do titular (14/11/2026):** antes de produzir qualquer coisa, leia e aplique `VISIBILIDADE.md` (na raiz do repositório): cada peça deve ajudar o Dr. Jackson Bueno a aparecer nas buscas do Google, das IAs e das redes pelos serviços dele.
 
-Um Reels por semana, publicado às **12h (horário de Brasília)**, e um **story às 18h** do mesmo dia avisando do Reels.
+Dois Reels por semana (quarta e sábado), publicado às **12h (horário de Brasília)**, e um **story às 18h** do mesmo dia avisando do Reels.
 Português do Brasil, linguagem simples, sem juridiquês. O titular revisa depois e avisa se algo precisar mudar.
+
+## Dois formatos de Reels, alternados (pedido do titular, 26/11/2026)
+Os Reels de quarta e sábado alternam entre dois formatos. Tudo o que vale para os dois (publicar às 12h, legenda, primeiro comentário,
+regra dos 90 dias para os clipes, verdade jurídica, `VISIBILIDADE.md`) continua igual.
+
+| formato | `"estilo"` no spec | gerador | aparência |
+|---|---|---|---|
+| **painel** (o de sempre) | `"painel"` (ou ausente, nos Reels antigos) | `reels.py` | azul-marinho e âmbar, duas vozes, cartões numerados — as regras das seções abaixo |
+| **história** (novo) | `"historia"` | `estilo_historia.py` | identidade do site e do feed: azul-toga, dourado, Playfair Display com itálico dourado, selo JB |
+
+**Como escolher o formato do dia:** veja o `"estilo"` do spec.json do último Reels já publicado (a pasta mais recente de `reels/` com
+`publicado.txt`). Se foi `"historia"`, faça `painel`; se foi `"painel"` ou não tem o campo, faça `historia`. Sempre grave o `"estilo"` no spec novo.
+Previsão: sáb 28/11 história (pronto em `reels/2026-11-28`), qua 02/12 painel, sáb 05/12 história, e assim por diante.
+
+### Formato história — como fazer
+- Modelo pronto: `reels/2026-11-28/spec.json` (copie a estrutura). Os tipos de cena e campos estão no cabeçalho de `ferramentas/reels/estilo_historia.py`:
+  `cover` (primeira cena, vira a capa; vídeo de banco em preto e branco + selo redondo com a foto do titular), `foto`, `papel` (fundo pergaminho
+  com foto colada, selo ou carimbo), `texto`, `fecho` (foto do titular em preto e branco + botão verde do WhatsApp). `*palavra*` no título = itálico dourado.
+- Estrutura que funciona (8 a 10 cenas, 45 a 55 s): gancho (a pergunta do jeito que se busca) → "muita gente pensa assim" (papel + selo) → "a lei diz"
+  (com `src` = artigo) → o que a pessoa pode ter/precisa fazer (CAT, estabilidade, indenização, provas) → "guarde as provas" (papel) → fecho chamando para o WhatsApp.
+- **Conteúdo (pedido do titular, 26/11/2026):** a especialidade é defender o trabalhador em ACIDENTE DE TRABALHO e DOENÇA OCUPACIONAL.
+  NÃO fale de INSS nem de benefícios previdenciários (B91, B31, auxílio-doença, auxílio-acidente, perícia do INSS). Fale de: o que é acidente/doença do trabalho,
+  CAT, estabilidade de 12 meses, indenização (danos morais e materiais), deveres da empresa, provas, prazos. Alterne acidente e doença, como sempre.
+  Tema escolhido pelo que o trabalhador mais precisa saber e mais pesquisa (pode repetir assunto já tratado no feed). Linguagem simples,
+  nuances ("pode", "depende do caso"), sem promessa de resultado e sem valores.
+- **Voz:** uma só, `"voz": "mulher"` no topo do spec, frases como fala de verdade (curtas, "Pois saiba que...", "Só que..."). Gere com
+  `REELS_VOZ_EXAG=0.5 REELS_VOZ_CFG=0.5` (mais natural; use os MESMOS valores na prévia e no vídeo final, senão a narração é refeita). Vozes reais só depois da aprovação do titular (seção Narração).
+- **Visual (não mudar sem o titular pedir):** cores #0f1624, #daa843 e #fbf8f2, títulos Playfair Display 800, texto Montserrat, margens de 150 px,
+  selo "JB · Direito do Acidentado" no topo, "@jacksonbueno.adv" e "jacksonbueno.adv.br" no rodapé. Fotos de banco sempre em preto e branco.
+  Clipe com texto legível de placa/letreiro estrangeiro (ex.: `onibus_corredor`) não serve para capa.
+- **Gerar:**
+  ```
+  cd ferramentas && npm i -s @fontsource/montserrat @fontsource/playfair-display && cd ..
+  REELS_VOZ_EXAG=0.5 REELS_VOZ_CFG=0.5 python3 ferramentas/reels/estilo_historia.py reels/<data>/spec.json reels/<data> --preview
+  REELS_VOZ_EXAG=0.5 REELS_VOZ_CFG=0.5 python3 ferramentas/reels/estilo_historia.py reels/<data>/spec.json reels/<data>
+  ```
+  Confira com Read a `capa.jpg` (sem legenda por cima), o `story.jpg` e os quadros de `preview/` (título inteiro, nada nas margens, sem texto estrangeiro legível).
+  No log, cada frase mostra "voz ... tentativa": se uma palavra importante continuar errada, troque por sinônimo e gere de novo. Apague `preview/` antes do commit.
+  O script cria `reel.mp4`, `capa.jpg`, `story.jpg` (já no estilo da marca) e `legenda.txt` (do campo `"legenda"`). Publicação, comentário e story: iguais às seções 6 e seguintes.
 
 ## Padrão visual aprovado pelo titular (12/11/2026) — não mudar sem ele pedir
 - **Respiro nas laterais:** nenhum elemento inserido (cartões, faixas, títulos, listas, checklist, caixa do site, selo, etiquetas) chega a menos de 150 px das bordas (`MX = 150` em `reels.py`).
@@ -15,7 +54,7 @@ Português do Brasil, linguagem simples, sem juridiquês. O titular revisa depoi
   sem contraste com o fundo ou com cara de amador; se o vídeo for muito claro (camisa branca, céu, parede clara), troque o clipe.
 - Ao conferir as prévias, reprove qualquer quadro em que algo encoste nas laterais ou pareça grande demais.
 
-## Narração (orientação do titular de 12/11/2026, até ele mudar)
+## Narração (orientação do titular de 12/11/2026, até ele mudar; vale para o formato painel — a história usa uma voz só, veja acima)
 - Use **duas vozes sintéticas, uma mulher e um homem** — nunca a voz do titular.
 - No spec: `"voz": "dupla"` no topo e, em cada cena, `"voz": "mulher"` ou `"voz": "homem"`, montando um bate-papo:
   a mulher costuma puxar o assunto (gancho, perguntas, situações do dia a dia, "o que fazer") e o homem responde/explica

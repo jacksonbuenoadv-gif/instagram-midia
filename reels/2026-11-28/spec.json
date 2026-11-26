@@ -1,0 +1,187 @@
+{
+ "estilo": "historia",
+ "tema": "Motorista assaltado trabalhando: isso é acidente de trabalho?",
+ "legenda": "Motorista assaltado trabalhando: isso é acidente de trabalho? 🚌\n\nPode ser. A lei trata como acidente de trabalho a agressão praticada por terceiro no local e no horário de trabalho, e o assalto entra nisso (Lei 8.213/91, art. 21, II, a). Para quem dirige, o trabalho acontece na estrada, no ônibus, no caminhão. 🛣️\n\n⚠️ O abalo emocional também pode contar: medo, ansiedade, trauma depois do assalto.\n\nQuando é acidente de trabalho:\n✅ A empresa precisa emitir a CAT. Se não emitir, você mesmo pode registrar (art. 22, § 2º)\n✅ Dependendo do caso, pode haver estabilidade de 12 meses no emprego (art. 118) e indenização da empresa\n\nCada caso é diferente e o juiz analisa as provas. Por isso, guarde:\n📄 Boletim de ocorrência\n🩺 Laudos e atestados\n📱 Fotos e mensagens\n\n👉 Me chama no WhatsApp: o contato está no link da bio. Me conta o seu caso que eu te digo o que fazer.\n📲 Manda pra um colega motorista.\n\n🌐 jacksonbueno.adv.br\n👨‍⚖️ Dr. Jackson Bueno · Advogado de acidente de trabalho e doença ocupacional · OAB/MG 211.217\n\n#advogadoacidentedetrabalho #acidentedetrabalho #motorista #assalto #CAT #direitodotrabalhador",
+ "voz": "mulher",
+ "beats": [
+  {
+   "kind": "cover",
+   "clip": "onibus_passageiros_dentro",
+   "kicker": "MOTORISTA",
+   "say": "Motorista, você foi assaltado trabalhando? Pois saiba que isso pode ser acidente de trabalho.",
+   "parts": [
+    {
+     "t": "Assaltado *trabalhando*?",
+     "k": "assaltado"
+    },
+    {
+     "t": "Isso pode ser *acidente de trabalho*",
+     "k": "acidente"
+    }
+   ],
+   "badge": {
+    "photo": "fotos/jackson-gravata-recostado.jpg",
+    "box": [
+     330,
+     170,
+     770,
+     610
+    ],
+    "pos": [
+     870,
+     700
+    ]
+   }
+  },
+  {
+   "kind": "papel",
+   "clip": "moto_rua_entardecer",
+   "rot": -3,
+   "kicker": "MUITA GENTE PENSA ASSIM",
+   "say": "Muita gente acha que não. Que assalto é coisa da rua, e não tem nada a ver com o emprego.",
+   "parts": [
+    {
+     "t": "“Assalto é coisa da *rua*”",
+     "k": "assalto"
+    }
+   ],
+   "sticker": {
+    "big": "NÃO",
+    "small": "É BEM ASSIM",
+    "pos": [
+     850,
+     380
+    ],
+    "k": "emprego",
+    "rot": 9
+   }
+  },
+  {
+   "kind": "foto",
+   "clip": "caminhao_branco_manobra",
+   "say": "Só que a lei diz outra coisa.",
+   "parts": [
+    {
+     "t": "Só que a lei diz *outra coisa*",
+     "k": "lei"
+    }
+   ]
+  },
+  {
+   "kind": "foto",
+   "clip": "avenida_taxis_moto",
+   "kicker": "A LEI DIZ",
+   "say": "Agressão de terceiro, no local e no horário do trabalho, é tratada como acidente de trabalho.",
+   "parts": [
+    {
+     "t": "Agressão de *terceiro* no trabalho",
+     "k": "agressão"
+    },
+    {
+     "t": "é *acidente de trabalho*",
+     "k": "tratada"
+    }
+   ],
+   "src": "Lei 8.213/91, art. 21, II, a"
+  },
+  {
+   "kind": "foto",
+   "clip": "homem_cabeca_nas_maos",
+   "say": "E o abalo emocional também pode contar. O medo, a ansiedade, o trauma.",
+   "parts": [
+    {
+     "t": "O *abalo emocional* também pode contar",
+     "k": "abalo"
+    }
+   ],
+   "sub": {
+    "t": "Medo, ansiedade, trauma",
+    "k": "medo"
+   }
+  },
+  {
+   "kind": "papel",
+   "clip": "estrada_pb_caminhoes",
+   "rot": 3,
+   "kicker": "NO ACIDENTE DE TRABALHO",
+   "say": "Quando é acidente de trabalho, a empresa precisa emitir a CAT. Se ela não emitir, você mesmo pode registrar.",
+   "parts": [
+    {
+     "t": "A empresa precisa emitir a *CAT*",
+     "k": "empresa"
+    }
+   ],
+   "sub": {
+    "t": "Se ela não emitir, você mesmo pode registrar",
+    "k": "emitir"
+   },
+   "stamp": {
+    "t": "CAT",
+    "pos": [
+     800,
+     380
+    ],
+    "k": "CAT",
+    "rot": -8,
+    "size": 56,
+    "fill": true
+   }
+  },
+  {
+   "kind": "foto",
+   "clip": "medica_exames_papel",
+   "say": "Dependendo do caso, ainda pode ter estabilidade de doze meses no emprego e indenização.",
+   "parts": [
+    {
+     "t": "*Estabilidade* de 12 meses e *indenização*",
+     "k": "estabilidade"
+    }
+   ],
+   "stamp": {
+    "t": "DEPENDE DE\nCADA CASO",
+    "pos": [
+     770,
+     560
+    ],
+    "k": "caso",
+    "rot": -7,
+    "size": 40,
+    "fill": true
+   }
+  },
+  {
+   "kind": "papel",
+   "clip": "medico_consulta",
+   "rot": -2,
+   "kicker": "GUARDE AS PROVAS",
+   "say": "Por isso, guarde tudo: boletim de ocorrência, laudos, atestados, fotos e mensagens.",
+   "parts": [
+    {
+     "t": "Boletim de ocorrência",
+     "k": "boletim"
+    },
+    {
+     "t": "Laudos e atestados",
+     "k": "laudos"
+    },
+    {
+     "t": "Fotos e *mensagens*",
+     "k": "fotos"
+    }
+   ],
+   "size": 70
+  },
+  {
+   "kind": "fecho",
+   "photo": "fotos/jackson-gravata-olhar-camera.jpg",
+   "say": "Aconteceu com você? Me chama no WhatsApp, o contato tá na bio. E manda este vídeo pra um colega motorista.",
+   "parts": [
+    {
+     "t": "Aconteceu com *você*?",
+     "k": "aconteceu"
+    }
+   ],
+   "button_k": "WhatsApp"
+  }
+ ]
+}

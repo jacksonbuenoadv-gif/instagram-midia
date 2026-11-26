@@ -27,6 +27,9 @@ PERG = (251, 248, 242); MUTED = (185, 189, 199); GREEN = (0, 99, 54); SLATE = (9
 _d0 = ImageDraw.Draw(Image.new("RGB", (1, 1)))
 
 # ---------------- fontes ----------------
+_pfdir = os.path.join(ROOT, "ferramentas", "node_modules", "@fontsource", "playfair-display")
+if not os.path.isdir(_pfdir):   # a tarefa agendada começa sem node_modules
+    reels.sh(["npm", "i", "-s", "@fontsource/playfair-display"], cwd=os.path.join(ROOT, "ferramentas"), stdout=reels.subprocess.DEVNULL)
 PFP = os.path.join(ROOT, "ferramentas", "node_modules", "@fontsource", "playfair-display", "files", "playfair-display-latin-%d-%s.woff")
 _pf = {}
 def PF(w, s, italic=False):
