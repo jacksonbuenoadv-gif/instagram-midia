@@ -67,3 +67,12 @@ Agendados em 23/11/2026 (horários de 22/11 e 23/11 08:30 já tinham passado ou 
 | 25/11 | 08:30 | carrossel posts/2026-11-21 |
 | 26/11 | 08:30 | carrossel posts/2026-11-22 |
 | 27/11 | 08:30 | carrossel posts/2026-11-23 |
+
+Agendados em 26/11/2026 (25/11 a 27/11 08:30 já tinham passado ou estavam ocupados; usados os próximos dias livres). Conferido no TikTok Studio: todos com legenda.
+
+| Data | Hora | Conteúdo |
+|---|---|---|
+| 26/11 | 17:00 | Reels reels/2026-11-25 (selo IA) |
+| 28/11 | 08:30 | carrossel posts/2026-11-24 |
+| 29/11 | 08:30 | carrossel posts/2026-11-25 |
+| 30/11 | 08:30 | carrossel posts/2026-11-26 |
