@@ -8,7 +8,7 @@ Use quando o Search Console não estiver disponível pelo Windsor (por exemplo, 
 | CAT: o que é, para que serve, quem abre ("cat", "o que é cat") | ~650 | 11/11/2026 |
 | B31 x B91: significado, diferenças, valor ("b31", "b91 inss significado") | ~370 | 10/11/2026 (parcial: estabilidade); 17/11/2026 (completo) |
 | Alergia/dermatite por cimento, óleo diesel, graxa, produtos de limpeza | ~125 | 13/11/2026 (cimento) |
-| Depois de acidente de trabalho posso ser demitido? | ~65 | 10/11/2026 |
+| Depois de acidente de trabalho posso ser demitido? | ~65 | 10/11/2026; 28/11/2026 (estabilidade no contrato de experiência) |
 | Advogado de acidente de trabalho (busca por serviço) | ~120 | |
 | Pensão alimentícia: FGTS e rescisão (outras verbas) | ~30 | |
 | Valor de indenização por acidente/doença do trabalho (tabela, sequela, tendinite) | ~40 | 25/11/2026 (tipos de indenização, sem valores) |
